@@ -1,9 +1,6 @@
 package org.example.main;
 
-import org.example.enumType.EnumCourier;
-import org.example.fabricPerson.BuilderPerson;
 import org.example.graph.Graph;
-import org.example.person.Person;
 
 public class Main {
     public static void main(String[] args) throws Exception {

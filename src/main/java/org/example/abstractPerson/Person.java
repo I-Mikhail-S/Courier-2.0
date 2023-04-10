@@ -1,4 +1,4 @@
-package org.example.person;
+package org.example.abstractPerson;
 /**
  * Фундаментальный класс person....
  */
