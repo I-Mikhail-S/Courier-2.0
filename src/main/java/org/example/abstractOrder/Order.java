@@ -1,5 +1,6 @@
-package org.example.order;
+package org.example.abstractOrder;
 
+import org.example.enumType.EnumOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
@@ -11,11 +12,11 @@ public class Order {
     //private double distance;
     private Time timeStart;
     private Time timeFinish;
-    private EnumOrder weight;
+    private double weight;
 
     public Order() {}
 
-    public Order(int id, Point pointStart, Point pointFinish, Time timeStart, Time timeFinish, EnumOrder weight) {
+    public Order(int id, Point pointStart, Point pointFinish, Time timeStart, Time timeFinish, double weight) {
         this.id = id;
         this.pointStart = pointStart;
         this.pointFinish = pointFinish;
@@ -64,11 +65,11 @@ public class Order {
         this.timeFinish = timeFinish;
     }
 
-    public EnumOrder getWeight() {
+    public double getWeight() {
         return weight;
     }
 
-    public void setWeight(EnumOrder weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 }

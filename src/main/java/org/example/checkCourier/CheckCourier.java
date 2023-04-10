@@ -1,12 +1,12 @@
 package org.example.checkCourier;
 
-import org.example.person.Person;
+import org.example.abstractPerson.Person;
 
 public class CheckCourier implements ICheckCourier{
 
     @Override
     public boolean checkCarCourier(Person person) throws Exception {
-        if((person.getSpeed()>0&&person.getSpeed()<60)&&(person.getEnergy()>0&&person.getEnergy()<10)){
+        if((person.getSpeed()>0.0&&person.getSpeed()<60.0)&&(person.getEnergy()>0.0&&person.getEnergy()<10.0)){
             return true;
         }
         return false;
@@ -14,7 +14,7 @@ public class CheckCourier implements ICheckCourier{
 
     @Override
     public boolean checkPeopleCourier(Person person) throws Exception {
-        if((person.getSpeed()>0&&person.getSpeed()<10)&&(person.getEnergy()>0&&person.getEnergy()<3)){
+        if((person.getSpeed()>0.0&&person.getSpeed()<10.0)&&(person.getEnergy()>0.0&&person.getEnergy()<3.0)){
             return true;
         }
         return false;
@@ -22,7 +22,7 @@ public class CheckCourier implements ICheckCourier{
 
     @Override
     public boolean checkBikeCourier(Person person) throws Exception {
-        if((person.getSpeed()>0&&person.getSpeed()<20)&&(person.getEnergy()>0&&person.getEnergy()<5)){
+        if((person.getSpeed()>0.0&&person.getSpeed()<20.0)&&(person.getEnergy()>0.0&&person.getEnergy()<5.0)){
             return true;
         }
         return false;

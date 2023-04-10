@@ -6,7 +6,7 @@ import org.example.courier.CourierBike;
 import org.example.courier.CourierCar;
 import org.example.courier.CourierPeople;
 import org.example.enumType.EnumCourier;
-import org.example.person.Person;
+import org.example.abstractPerson.Person;
 
 public class BuilderPerson {
 
@@ -52,18 +52,19 @@ public class BuilderPerson {
             switch (enumCourier) {
                 case CAR:
                     person = new CourierCar();
-                    if(checkCourier.checkCarCourier(person)) throw new Exception("Не коректные данные");
+                    if(checkCourier.checkCarCourier(person)) throw new Exception("Не коректные данные!");
                     break;
                 case BIKE:
                     person = new CourierBike();
+                    if(checkCourier.checkBikeCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 case PEOPLE:
                     person = new CourierPeople();
+                    if(checkCourier.checkPeopleCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 default:
-                    throw new Exception("Invalid product type!");
+                    throw new Exception("Не коректные данные!");
             }
-
             return person;
         }
         Person getNewCourier(int id, String name, double speed, double energy, EnumCourier enumCourier) throws Exception {
@@ -83,7 +84,7 @@ public class BuilderPerson {
                     if(checkCourier.checkPeopleCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 default:
-                    throw new Exception("Invalid product type!");
+                    throw new Exception("Не коректные данные!");
             }
             return person;
         }

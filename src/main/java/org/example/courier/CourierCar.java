@@ -1,6 +1,6 @@
 package org.example.courier;
 
-import org.example.person.Person;
+import org.example.abstractPerson.Person;
 
 public class CourierCar extends Person {
     private int id;
