@@ -4,28 +4,14 @@ package org.example.graph;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Path { // объект данного класса содержащий расстояние и предыдущие и пройденные вершины
-    private int distance; // текущая дистанция от начальной вершины
-    private List<Integer> parentVertices; // текущий родитель вершины
-
-    public Path(int distance) {
-        this.distance = distance;
-        this.parentVertices = new ArrayList<>();
-    }
-
-    public int getDistance() {
-        return distance;
-    }
-
-    public void setDistance(int distance) {
-        this.distance = distance;
-    }
-
-    public List<Integer> getParentVertices() {
-        return parentVertices;
-    }
-
-    public void setParentVertices(List<Integer> parentVertices) {
-        this.parentVertices = parentVertices;
+class DistPar // Расстояние и родительская вершина
+{ // Объекты сохраняются в массиве sPath
+    public int distance; // Расстояние от начальной вершины до текущей
+    public int parentVert; // Текущий родитель вершины
+    // -------------------------------------------------------------
+    public DistPar(int pv, int d) // Конструктор
+    {
+        distance = d;
+        parentVert = pv;
     }
 }

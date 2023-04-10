@@ -1,19 +1,34 @@
 package org.example.graph;
 
-public class Vertex {
-    private char label;
+import org.example.abstractOrder.Order;
+import org.example.abstractPerson.Person;
+
+public class Vertex <T> {
+    private Integer label;
     private boolean isInTree;
 
-    public Vertex(char label) {
-        this.label = label;
+
+    public Vertex(T label) {
+        Object object;
+        Order order = null;
+        Person person = null;
+        if(label instanceof Person) {
+            person = (Person) label;
+            this.label = (Integer) person.getId();
+        }
+        if(label instanceof Order) {
+            object = (Order) label;
+            this.label = (Integer) order.getId();
+        }
+        this.label = (Integer) label;
         this.isInTree = false;
     }
 
-    public char getLabel() {
+    public Integer getLabel() {
         return label;
     }
 
-    public void setLabel(char label) {
+    public void setLabel(Integer label) {
         this.label = label;
     }
 

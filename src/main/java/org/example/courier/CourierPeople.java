@@ -1,6 +1,7 @@
 package org.example.courier;
 
 import org.example.abstractPerson.Person;
+import org.example.point.Point;
 
 public class CourierPeople extends Person {
     private int id;
@@ -8,9 +9,10 @@ public class CourierPeople extends Person {
     private double speed;
     private double energy;
     private boolean free;
+    private Point location;
 
-    public CourierPeople(int id,String name,double speed,double energy) {
-        super(id,name,speed,energy);
+    public CourierPeople(int id,String name,double speed,double energy, Point location) {
+        super(id,name,speed,energy,location);
     }
 
     public CourierPeople() {
@@ -55,6 +57,16 @@ public class CourierPeople extends Person {
     @Override
     public void setEnergy(double energy) {
         this.energy = energy;
+    }
+
+    @Override
+    public Point getLocation() {
+        return location;
+    }
+
+    @Override
+    public void setLocation(Point location) {
+        this.location = location;
     }
 
     public void setFree(boolean free) {
