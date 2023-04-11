@@ -1,7 +1,6 @@
 package org.example.graph;
 
-import java.util.ArrayList;
-import java.util.List;
+import org.example.ID.ID;
 
 public class Graph {
     private final int MAX_VERTS = 20;
@@ -27,9 +26,9 @@ public class Graph {
         sPath = new DistPar[MAX_VERTS]; // shortest paths
     }
     // -------------------------------------------------------------
-    public void addVertex(char lab)
+    public void addVertex(Object lab)
     {
-        vertexList[nVerts++] = new Vertex2(lab);
+        vertexList[nVerts++] = new Vertex2<Object>(lab);
     }
     // -------------------------------------------------------------
     public void addEdge(int start, int end, int weight)
@@ -129,7 +128,7 @@ public class Graph {
                 System.out.print("inf"); // inf
             else
                 System.out.print(sPath[j].distance); // 50
-            char parent = vertexList[ sPath[j].parentVert ].label;
+            ID parent =  vertexList[ sPath[j].parentVert ].label;
             System.out.print("(" + parent + ") "); // (A)
         }
         System.out.println("");

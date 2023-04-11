@@ -1,5 +1,6 @@
 package org.example.fabricPerson;
 
+import org.example.ID.ID;
 import org.example.checkCourier.CheckCourier;
 import org.example.checkCourier.ICheckCourier;
 import org.example.courier.CourierBike;
@@ -27,7 +28,7 @@ public class BuilderPerson {
         return this;
     }
 
-    public BuilderPerson id(int id) {
+    public BuilderPerson id(ID id) {
         person.setId(id);
         return this;
     }
@@ -68,7 +69,7 @@ public class BuilderPerson {
             }
             return person;
         }
-        Person getNewCourier(int id, String name, double speed, double energy, Point location, EnumCourier enumCourier) throws Exception {
+        Person getNewCourier(ID id, String name, double speed, double energy, Point location, EnumCourier enumCourier) throws Exception {
             Person person = null;
             ICheckCourier checkCourier = new CheckCourier();
             switch (enumCourier) {

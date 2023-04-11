@@ -1,5 +1,6 @@
 package org.example.abstractPerson;
 
+import org.example.ID.ID;
 import org.example.point.Point;
 
 /**
@@ -7,7 +8,7 @@ import org.example.point.Point;
  */
 public  class Person {
 
-    private int id;
+    private ID id;
     private String name;
     private double speed;
     private double energy;
@@ -25,7 +26,7 @@ public  class Person {
 
     public Person() {}
 
-    public Person(int id, String name, double speed, double energy, Point location) {
+    public Person(ID id, String name, double speed, double energy, Point location) {
         this.id = id;
         this.name = name;
         this.speed = speed;
@@ -33,11 +34,11 @@ public  class Person {
         this.location = location;
     }
 
-    public int getId() {
+    public ID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ID id) {
         this.id = id;
     }
 
