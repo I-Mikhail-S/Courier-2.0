@@ -1,4 +1,7 @@
 package org.example.abstractPerson;
+
+import org.example.point.Point;
+
 /**
  * Фундаментальный класс person....
  */
@@ -8,6 +11,7 @@ public  class Person {
     private String name;
     private double speed;
     private double energy;
+    private Point location;
 
     // setIsFree why?
     private boolean setIsFree;
@@ -21,11 +25,12 @@ public  class Person {
 
     public Person() {}
 
-    public Person(int id, String name, double speed, double energy) {
+    public Person(int id, String name, double speed, double energy, Point location) {
         this.id = id;
         this.name = name;
         this.speed = speed;
         this.energy = energy;
+        this.location = location;
     }
 
     public int getId() {
@@ -60,7 +65,13 @@ public  class Person {
         this.energy = energy;
     }
 
+    public Point getLocation() {
+        return location;
+    }
 
+    public void setLocation(Point location) {
+        this.location = location;
+    }
 }
 
 
