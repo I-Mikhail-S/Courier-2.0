@@ -6,8 +6,8 @@ import java.util.Random;
 
 public class OrderId implements ID {
     private Random random;
-    String ID_TYPE = "XVFER12345";
-    int length = 10;
+    String ID_TYPE = "1234";
+    int length = 4;
     private char[] symbols;
     private char[] buf;
 

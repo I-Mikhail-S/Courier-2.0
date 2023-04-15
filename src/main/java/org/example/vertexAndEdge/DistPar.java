@@ -1,4 +1,4 @@
-package org.example.graph;
+package org.example.vertexAndEdge;
 
 
 class DistPar // Расстояние и родительская вершина
