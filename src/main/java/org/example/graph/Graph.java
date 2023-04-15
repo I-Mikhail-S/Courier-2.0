@@ -34,7 +34,7 @@ public class Graph {
     public void addEdge(int start, int end, int weight)
     {
         adjMat[start][end] = weight; // (направленный граф)
-    }
+    }//думать
     public void path() // Выбор кратчайших путей
     {
         int startTree = 0; // Начиная с вершины 0

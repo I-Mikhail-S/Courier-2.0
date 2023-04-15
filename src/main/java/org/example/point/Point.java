@@ -36,7 +36,7 @@ public class Point {
         }
         throw new Exception("Проверьте точки!");
     }
-    public double distancePoint(Point z) throws Exception {
+    public  double distancePoint(Point z) throws Exception {
         if (z.getX() != getX() && z.getY() != getY()) {
             return Math.sqrt(Math.pow(Math.abs(z.getX() - getX()), 2) + Math.pow(Math.abs(z.getY() - getY()), 2));
         }
