@@ -73,6 +73,18 @@ public  class Person {
     public void setLocation(Point location) {
         this.location = location;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", speed=" + speed +
+                ", energy=" + energy +
+                ", location=" + location +
+                ", setIsFree=" + setIsFree +
+                '}';
+    }
 }
 
 

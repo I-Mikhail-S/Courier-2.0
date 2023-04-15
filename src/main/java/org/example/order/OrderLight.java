@@ -1,31 +1,31 @@
 package org.example.order;
 
+import org.example.ID.ID;
 import org.example.abstractOrder.Order;
 import org.example.point.Point;
 import org.example.time.Time;
 
 public class OrderLight extends Order {
 
-    private int id;
+    private ID id;
     private Point pointStart;
     private Point pointFinish;
-    private Time timeStart;
-    private Time timeFinish;
+    private Time time;
     private double weight;
 
     public OrderLight() {super();}
 
-    public OrderLight(int id, Point pointStart, Point pointFinish, Time timeStart, Time timeFinish, double weight) {
-        super(id, pointStart, pointFinish, timeStart, timeFinish, weight);
+    public OrderLight(ID id, Point pointStart, Point pointFinish, Time time, double weight) {
+        super(id, pointStart, pointFinish, time, weight);
     }
 
     @Override
-    public int getId() {
+    public ID getId() {
         return id;
     }
 
     @Override
-    public void setId(int id) {
+    public void setId(ID id) {
         this.id = id;
     }
 
@@ -49,25 +49,7 @@ public class OrderLight extends Order {
         this.pointFinish = pointFinish;
     }
 
-    @Override
-    public Time getTimeStart() {
-        return timeStart;
-    }
 
-    @Override
-    public void setTimeStart(Time timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    @Override
-    public Time getTimeFinish() {
-        return timeFinish;
-    }
-
-    @Override
-    public void setTimeFinish(Time timeFinish) {
-        this.timeFinish = timeFinish;
-    }
 
     @Override
     public double getWeight() {
@@ -80,13 +62,22 @@ public class OrderLight extends Order {
     }
 
     @Override
+    public Time getTime() {
+        return time;
+    }
+
+    @Override
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    @Override
     public String toString() {
-        return "OrderLight{" +
+        return "OrderHard{" +
                 "id=" + id +
                 ", pointStart=" + pointStart +
                 ", pointFinish=" + pointFinish +
-                ", timeStart=" + timeStart +
-                ", timeFinish=" + timeFinish +
+                ", time=" + time +
                 ", weight=" + weight +
                 '}';
     }

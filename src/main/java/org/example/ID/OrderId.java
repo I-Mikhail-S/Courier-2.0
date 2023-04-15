@@ -30,7 +30,7 @@ public class OrderId implements ID {
     @Override
     public String toString() {
         return "OrderId{" +
-                "buf=" + Arrays.toString(buf) +
+                "buf=" + nextString() +
                 '}';
     }
 }

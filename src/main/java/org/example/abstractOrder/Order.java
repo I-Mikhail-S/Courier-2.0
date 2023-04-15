@@ -1,75 +1,72 @@
 package org.example.abstractOrder;
 
+import org.example.ID.ID;
 import org.example.enumType.EnumOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
 // TODO: 08/04/2023
 public class Order {
-    private int id;
+    private ID id;
     private Point pointStart;
     private Point pointFinish;
     //private double distance;
-    private Time timeStart;
-    private Time timeFinish;
+    private Time time;
     private double weight;
 
     public Order() {}
 
-    public Order(int id, Point pointStart, Point pointFinish, Time timeStart, Time timeFinish, double weight) {
+    public Order(ID id, Point pointStart, Point pointFinish, Time time, double weight) {
         this.id = id;
         this.pointStart = pointStart;
         this.pointFinish = pointFinish;
-        this.timeStart = timeStart;
-        this.timeFinish = timeFinish;
+        this.time = time;
         this.weight = weight;
     }
 
-    public int getId() {
+    public ID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(ID id) {
         this.id = id;
     }
 
     public Point getPointStart() {
         return pointStart;
     }
-
     public void setPointStart(Point pointStart) {
         this.pointStart = pointStart;
     }
-
     public Point getPointFinish() {
         return pointFinish;
     }
-
     public void setPointFinish(Point pointFinish) {
         this.pointFinish = pointFinish;
     }
-
-    public Time getTimeStart() {
-        return timeStart;
-    }
-
-    public void setTimeStart(Time timeStart) {
-        this.timeStart = timeStart;
-    }
-
-    public Time getTimeFinish() {
-        return timeFinish;
-    }
-
-    public void setTimeFinish(Time timeFinish) {
-        this.timeFinish = timeFinish;
-    }
-
     public double getWeight() {
         return weight;
     }
-
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public Time getTime() {
+        return time;
+    }
+
+    public void setTime(Time time) {
+        this.time = time;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", pointStart=" + pointStart +
+                ", pointFinish=" + pointFinish +
+                ", time=" + time +
+                ", weight=" + weight +
+                '}';
     }
 }

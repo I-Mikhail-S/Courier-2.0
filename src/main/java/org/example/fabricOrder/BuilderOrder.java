@@ -17,10 +17,10 @@ public class BuilderOrder {
         order = new Factory().getNewOrder(type);
     }
 
-    public BuilderOrder id (int id) {
+    /*public BuilderOrder id (int id) {
         order.setId(id);
         return this;
-    }
+    }*/
 
     public BuilderOrder pointStart (Point pointStart) {
         order.setPointStart(pointStart);
@@ -31,16 +31,11 @@ public class BuilderOrder {
         order.setPointFinish(pointFinish);
         return this;
     }
-
-    public BuilderOrder timeStart (Time timeStart) {
-        order.setTimeStart(timeStart);
+    public BuilderOrder pointFinish (Time time) {
+        order.setTime(time);
         return this;
     }
 
-    public BuilderOrder timeFinish (Time timeFinish) {
-        order.setTimeFinish(timeFinish);
-        return this;
-    }
 
     public Order build() {
         return order;
