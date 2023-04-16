@@ -13,6 +13,7 @@ public class Order {
     //private double distance;
     private Time time;
     private double weight;
+    public boolean flag;
 
     public Order() {}
 
@@ -22,6 +23,15 @@ public class Order {
         this.pointFinish = pointFinish;
         this.time = time;
         this.weight = weight;
+        this.flag = false;
+    }
+
+    public boolean isFlag() {
+        return flag;
+    }
+
+    public void setFlag(boolean flag) {
+        this.flag = flag;
     }
 
     public ID getId() {

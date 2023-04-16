@@ -9,7 +9,9 @@ import java.util.*;
 public class DijkstraMe  {
     private static Map<Integer, Object> data = new HashMap<>();
 
+    private static Set<NodeMe> nodesHelp ;
     public static Graph calculateShortestPathFromSource(Graph graph, NodeMe source) {
+
         source.setDistance(0);
         source.setPoint(0, 0);
         Set<NodeMe> settledNodes = new HashSet<>();
@@ -33,7 +35,7 @@ public class DijkstraMe  {
     }
 
     public static Map<Integer, Object> calculateTime(Graph graph) {
-       int speed = graph.getNodes().stream().iterator().next().getSpeed();
+       int speed = graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getSpeed();
         if (!graph.getNodes().isEmpty())
             graph.getNodes().remove(graph.getNodes().iterator().next());
 
@@ -45,17 +47,17 @@ public class DijkstraMe  {
         while( graph.getNodes().size()!=0) {
             long time = TimeBuilder.getTime(a,b);
             int bestTime = graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getDistance()/speed;
-            if (time+3 >= bestTime) {
+            if (time >= bestTime) {
+
                 data.put(bestTime,
                         (graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName()
                                 instanceof Order) ? graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName() : null);
-           break;
-            } else {
-                graph.getNodes().remove(graph.getNodes().iterator().next());
+                if(graph.getNodes().size()!=1) {
+                    graph.getNodes().remove(graph.getNodes().stream().iterator().next());
+                }
+                break;
             }
         }
-
-
         return data;
     }
 
