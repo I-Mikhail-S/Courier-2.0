@@ -1,15 +1,15 @@
 package org.example.try2;
 
 import org.example.abstractOrder.Order;
+import org.example.abstractPerson.Person;
 import org.example.time.Time;
 import org.example.time.TimeBuilder;
 
 import java.util.*;
 
 public class DijkstraMe  {
-    private static Map<Integer, Object> data = new HashMap<>();
+    private static Map<Person,Order> data = new HashMap<>();
 
-    private static Set<NodeMe> nodesHelp ;
     public static Graph calculateShortestPathFromSource(Graph graph, NodeMe source) {
 
         source.setDistance(0);
@@ -34,32 +34,23 @@ public class DijkstraMe  {
         return graph;
     }
 
-    public static Map<Integer, Object> calculateTime(Graph graph) {
-       int speed = graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getSpeed();
-        if (!graph.getNodes().isEmpty())
-            graph.getNodes().remove(graph.getNodes().iterator().next());
-
-        Time timeOrder = (graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName()
-                instanceof Order)?((Order) graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName()).getTime():null;
-
-        String a = timeOrder.getStartTimeInterval();
-        String b = timeOrder.getEndTimeInterval();
-        while( graph.getNodes().size()!=0) {
+    public static  Map<Person,Order> calculateTime(Graph graph) {
+        List<NodeMe> help = graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).toList();
+        for (int i = 1; i < help.size(); i++) {
+            Time timeOrder = help.get(i).getNameO().getTime();
+            String a = timeOrder.getStartTimeInterval();
+            String b = timeOrder.getEndTimeInterval();
             long time = TimeBuilder.getTime(a,b);
-            int bestTime = graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getDistance()/speed;
-            if (time >= bestTime) {
-
-                data.put(bestTime,
-                        (graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName()
-                                instanceof Order) ? graph.getNodes().stream().sorted(Comparator.comparingInt(NodeMe::getDistance)).iterator().next().getName() : null);
-                if(graph.getNodes().size()!=1) {
-                    graph.getNodes().remove(graph.getNodes().stream().iterator().next());
-                }
-                break;
+            int bestTime = (int) (help.get(i).getDistance()/help.get(0).getNameC().getSpeed());
+            if (time+3 >= bestTime) {
+                data.put(help.get(0).getNameC(),help.get(i).getNameO());
+                return  data;
             }
         }
-        return data;
+        return null;
+
     }
+
 
     private static NodeMe getLowestDistanceNode(Set<NodeMe> unsettledNodes) {
         NodeMe lowestDistanceNode = null;

@@ -1,7 +1,6 @@
-package org.example.fabricOrder;
+package org.example.fabricPerson.fabricOrder;
 
 import org.example.checkOrder.CheckOrder;
-import org.example.checkOrder.ICheckOrder;
 import org.example.enumType.EnumOrder;
 import org.example.abstractOrder.Order;
 import org.example.order.OrderHard;

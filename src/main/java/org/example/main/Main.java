@@ -7,6 +7,7 @@ import org.example.abstractPerson.Person;
 import org.example.courier.CourierBike;
 import org.example.order.OrderLight;
 import org.example.point.Point;
+import org.example.start.StartApplication;
 import org.example.time.Time;
 import org.example.try2.DijkstraMe;
 import org.example.try2.Graph;
@@ -17,23 +18,14 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws Exception {
-        NodeMe nodeA = new NodeMe(new Person(new PersonID(),"Stepan",2,23,new Point(1,6)));
-        NodeMe nodeB = new NodeMe(new Person(new PersonID(),"Lev",23,23,new Point(2,8)));
-        NodeMe nodeC = new NodeMe(new Order(new OrderId(),new Point(13,13),new Point(27,24),new Time("12:00","12:10"),34));
-        NodeMe nodeD = new NodeMe(new Order(new OrderId(),new Point(14,13),new Point(13,12),new Time("12:00","12:08"),14));
-        nodeA.addDestination(nodeC);
-        nodeA.addDestination(nodeD);
-        nodeB.addDestination(nodeC);
-        Graph graph1 = new Graph();
-        Graph graph2 = new Graph();
-        graph1.addNode(nodeA);
-        graph1.addNode(nodeC);
-        graph1.addNode(nodeD);
-        graph2.addNode(nodeB);
-        graph2.addNode(nodeC);
-        graph1 = DijkstraMe.calculateShortestPathFromSource(graph1, nodeA);
-        graph2 = DijkstraMe.calculateShortestPathFromSource(graph2, nodeB);
-        System.out.println(DijkstraMe.calculateTime(graph1));
-        System.out.println(DijkstraMe.calculateTime(graph2));
+
+        List<Person> people = new ArrayList<>();
+        List<Order> order = new ArrayList<>();
+        people.add(new Person(new PersonID(),"Stepan",2,23,new Point(1,6)));
+        people.add(new Person(new PersonID(),"Lev",23,23,new Point(2,8)));
+        order.add(new Order(new OrderId(),new Point(13,13),new Point(27,24),new Time("12:00","12:10"),14));
+        order.add(new Order(new OrderId(),new Point(14,13),new Point(13,12),new Time("12:00","12:05"),34));
+        StartApplication startApplication = new StartApplication(people,order);
+        startApplication.createAllObjects();
     }
 }

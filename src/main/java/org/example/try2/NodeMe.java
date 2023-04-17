@@ -9,7 +9,8 @@ import java.util.*;
 public class NodeMe  {
 
     // Member variables of this class
-    private Object name;
+    private Order nameO;
+    private Person nameC;
     private int x;
     private int y;
 
@@ -43,13 +44,13 @@ public class NodeMe  {
     }
 
     public void addDestination(NodeMe destination) {
-        if (destination.name instanceof Person) {
-            this.x1 = (int) ((Person) destination.name).getLocation().getX();
-            this.y1 = (int) ((Person) destination.name).getLocation().getY();
+        if (destination.nameC instanceof Person) {
+            this.x1 = (int) ((Person) destination.nameC).getLocation().getX();
+            this.y1 = (int) ((Person) destination.nameC).getLocation().getY();
         }
-        if (destination.name instanceof Order) {
-            this.x1 = (int) ((Order) destination.name).getPointFinish().getX();
-            this.y1 = (int) ((Order) destination.name).getPointFinish().getY();
+        if (destination.nameO instanceof Order) {
+            this.x1 = (int) ((Order) destination.nameO).getPointFinish().getX();
+            this.y1 = (int) ((Order) destination.nameO).getPointFinish().getY();
         }
         adjacentNodes.put(destination, computeEuclideanDistance());
 
@@ -57,12 +58,12 @@ public class NodeMe  {
 
     public NodeMe(Object name) {
         if (name instanceof Order) {
-            this.name = name;
+            this.nameO = (Order) name;
             this.x = (int) ((Order) name).getPointFinish().getX();
             this.y = (int) ((Order) name).getPointFinish().getY();
         }
         if (name instanceof Person) {
-            this.name = name;
+            this.nameC = (Person) name;
             this.x = (int) ((Person) name).getLocation().getX();
             this.y = (int) ((Person) name).getLocation().getY();
             this.speed = (int) ((Person) name).getSpeed();
@@ -105,14 +106,14 @@ public class NodeMe  {
 
     @Override
     public String toString() {
-        if (name instanceof Person) {
+        if (nameC instanceof Person) {
             return "NodeMe{" +
-                    "name='" + ((Person) name).getName() + '\'' +
+                    "name='" + ((Person) nameC).getName() + '\'' +
                     ", distance=" + distance +
                     '}';
-        } else if (name instanceof Order) {
+        } else if (nameO instanceof Order) {
             return "NodeMe{" +
-                    "name='" + ((Order) name).getId() + '\'' +
+                    "name='" + ((Order) nameO).getId() + '\'' +
                     ", distance=" + distance +
                     '}';
         }
@@ -136,12 +137,19 @@ public class NodeMe  {
         this.y = y;
     }
 
-    public Object getName() {
-        return name;
+    public Order getNameO() {
+        return nameO;
     }
 
-    public void setName(Object name) {
-        this.name = name;
+    public void setNameO(Order nameO) {
+        this.nameO = nameO;
     }
 
+    public Person getNameC() {
+        return nameC;
+    }
+
+    public void setNameC(Person nameC) {
+        this.nameC = nameC;
+    }
 }
