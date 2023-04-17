@@ -24,16 +24,12 @@ public class StartApplication {
     public void createAllObjects() {
         List<NodeMe> nodePeople = new ArrayList<>();
         List<NodeMe> nodeOrder = new ArrayList<>();
-
+        List<Graph> graph = new ArrayList<>();
         for (int i = 0; i < allPeople.size(); i++) {
+            graph.add(new Graph());
             nodePeople.add(new NodeMe(allPeople.get(i)));
         }   for (int i = 0; i < allOrder.size(); i++) {
             nodeOrder.add(new NodeMe(allOrder.get(i)));
-        }
-
-        List<Graph> graph = new ArrayList<>();
-        for (int i = 0; i < nodePeople.size(); i++) {
-            graph.add(new Graph());
         }
         for (int i = 0; i < nodePeople.size(); i++) {
             for (int j = 0; j < nodeOrder.size(); j++) {
@@ -48,14 +44,6 @@ public class StartApplication {
         }
         for (int i = 0; i < graph.size(); i++) {
             Map<Person,Order> data =  DijkstraMe.calculateTime(DijkstraMe.calculateShortestPathFromSource(graph.get(i),nodePeople.get(i)));
-            List<NodeMe> mainList = new ArrayList<>();
-            mainList.addAll(graph.get(i).getNodes());
-                for (int f = 0; f< nodeOrder.size();f++) {
-                    if(mainList.get(f).getNameO().getWeight()==nodeOrder.get(f).getNameO().getWeight())
-                    graph.get(f).getNodes().remove(nodeOrder.get(f));
-                }
-            System.out.println(data);
-            data.clear();
         }
     }
 
