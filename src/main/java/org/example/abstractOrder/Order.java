@@ -6,8 +6,8 @@ import org.example.point.Point;
 import org.example.time.Time;
 
 // TODO: 08/04/2023
-public class Order {
-    private ID id;
+public class Order implements Comparable<Order> {
+    private int id;
     private Point pointStart;
     private Point pointFinish;
     //private double distance;
@@ -17,7 +17,7 @@ public class Order {
 
     public Order() {}
 
-    public Order(ID id, Point pointStart, Point pointFinish, Time time, double weight) {
+    public Order(int id, Point pointStart, Point pointFinish, Time time, double weight) {
         this.id = id;
         this.pointStart = pointStart;
         this.pointFinish = pointFinish;
@@ -34,11 +34,11 @@ public class Order {
         this.flag = flag;
     }
 
-    public ID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(ID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -78,5 +78,11 @@ public class Order {
                 ", time=" + time +
                 ", weight=" + weight +
                 '}';
+    }
+
+    @Override
+    public int compareTo(Order o) {
+        return (int) ((int) getTime().getTimeBuilder().getTime(time.getStartTimeInterval(),time.getEndTimeInterval())-
+                        o.getTime().getTimeBuilder().getTime(o.getTime().getStartTimeInterval(),o.getTime().getEndTimeInterval()));
     }
 }

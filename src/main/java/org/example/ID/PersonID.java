@@ -32,6 +32,6 @@ public class PersonID implements ID{
 
     @Override
     public String toString() {
-        return "PersonID{"  +  nextString() + '}';
+        return "PersonID{"  +  buf + '}';
     }
 }

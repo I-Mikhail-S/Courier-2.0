@@ -8,7 +8,7 @@ import org.example.point.Point;
  */
 public  class Person {
 
-    private ID id;
+    private int id;
     private String name;
     private double speed;
     private double energy;
@@ -26,7 +26,7 @@ public  class Person {
 
     public Person() {}
 
-    public Person(ID id, String name, double speed, double energy, Point location) {
+    public Person(int id, String name, double speed, double energy, Point location) {
         this.id = id;
         this.name = name;
         this.speed = speed;
@@ -34,11 +34,11 @@ public  class Person {
         this.location = location;
     }
 
-    public ID getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(ID id) {
+    public void setId(int id) {
         this.id = id;
     }
 
