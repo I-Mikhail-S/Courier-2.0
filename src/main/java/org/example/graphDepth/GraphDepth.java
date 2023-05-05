@@ -1,6 +1,6 @@
 package org.example.graphDepth;
 
-import org.example.vertexAndEdge.Vertex;
+import org.example.unused.vertexAndEdge.Vertex;
 
 import java.util.*;
 

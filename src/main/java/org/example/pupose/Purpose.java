@@ -8,8 +8,14 @@ public class Purpose {
     private Person courier;
     private Order order;
     private Point startPoint;
-    public int timeExecution;
-    private double routeLength;
+    private int timeExecution; //время выполнения
+    private double routeLength; // длинна маршрута
+
+    public Purpose(Person courier, Order order, double routeLength) {
+        this.courier = courier;
+        this.order = order;
+        this.routeLength = routeLength;
+    }
 
     public Person getCourier() {
         return courier;
