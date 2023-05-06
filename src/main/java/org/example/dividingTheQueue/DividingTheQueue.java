@@ -2,6 +2,8 @@ package org.example.dividingTheQueue;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
+import org.example.point.Point;
+import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
 
 import java.util.ArrayList;
@@ -30,12 +32,24 @@ public class DividingTheQueue {
         return listOrders;
     }
 
+    public List<Purpose> firstSchedule (List<Order> listOrder, List<Person> listPerson) {
+        List<Purpose> allDividingPurpose = new ArrayList<>();
+        double coefficient = listOrder.size() / listPerson.size();
+        for (int i = 0; i < listPerson.size(); i++) {
+            for (int j = i; j < listOrder.size(); j += (int) coefficient){
+                Purpose helpPurpose = new Purpose(listPerson.get(i), listOrder.get(j),
+                        Point.distanceFourPoint(listPerson.get(i).getLocation().getX(), listPerson.get(i).getLocation().getY(),
+                                listOrder.get(j).getPointStart().getX(), listOrder.get(j).getPointStart().getY()));
+                allDividingPurpose.add(helpPurpose);
+            }
+        }
+    }
+
     public List<Integer> sizeTheOrder(int sizeOrder, int sizePerson) {
         List<Integer> allDividingNumber = new ArrayList<>();
         double coefficient = sizeOrder / sizePerson;
         for (int i = 0; i < sizePerson; i++) {
             allDividingNumber.add((int) coefficient);
-
         }
         if (sizeOrder % sizePerson == 0) {
             return allDividingNumber;

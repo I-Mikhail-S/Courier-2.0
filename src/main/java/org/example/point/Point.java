@@ -43,9 +43,9 @@ public class Point {
         throw new Exception("Проверьте точки!");
     }
 
-    public static double distanceFourPoint (double xStart, double yStart, double xFinish, double yFinish){
+    public static double distanceFourPoint (double xStart, double yStart, double xFinish, double yFinish) {
         return Math.sqrt(Math.pow(Math.abs(xFinish - xStart), 2) + Math.pow(Math.abs(yFinish - yStart), 2));
-    }
+    } // МОЖЕТ ВЕРНУТЬ 0 !
     @Override
     public String toString() {
         return "Point{" +

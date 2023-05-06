@@ -14,7 +14,6 @@ public  class Person {
     private double energy;
     private Point location;
 
-    // setIsFree why?
     private boolean setIsFree;
     public boolean getIsFree() {
         return setIsFree;
