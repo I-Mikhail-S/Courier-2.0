@@ -9,7 +9,6 @@ public class CourierCar extends Person {
     private String name;
     private double speed;
     private double energy;
-    private boolean free;
     private Point location;
 
     public CourierCar() {
@@ -73,11 +72,11 @@ public class CourierCar extends Person {
     @Override
     public String toString() {
         return "CourierCar{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", speed=" + getSpeed() +
-                ", energy=" + getEnergy() +
-                ", free=" + getIsFree() +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", speed=" + speed +
+                ", energy=" + energy +
+                ", location=" + location +
                 '}';
     }
 }

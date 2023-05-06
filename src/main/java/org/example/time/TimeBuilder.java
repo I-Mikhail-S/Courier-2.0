@@ -10,6 +10,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class TimeBuilder {
+
     private static String format = "mm:ss";
    private static SimpleDateFormat dateFormat;
 
@@ -38,6 +39,32 @@ public class TimeBuilder {
         // matched the ReGex
             return m.matches();
 
+
+    }
+    public static String doTime(String time){
+
+            // Regex to check valid time in 12-hour format.
+            String regexPattern
+                    = "([01]?[0-9]|2[0-3]):[0-5][0-9]";
+
+            // Compile the ReGex
+            Pattern compiledPattern
+                    = Pattern.compile(regexPattern);
+
+            // If the time is empty
+            // return false
+            if (time == null) {
+                return null;
+            }
+
+            // Pattern class contains matcher() method
+            // to find matching between given time
+            // and regular expression.
+            Matcher m = compiledPattern.matcher(time);
+
+            // Return if the time
+            // matched the ReGex
+            return m.group(1);
     }
     public static boolean isValidTime(String s1,String s2){
         dateFormat = new SimpleDateFormat(format);

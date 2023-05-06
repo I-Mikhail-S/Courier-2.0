@@ -41,6 +41,10 @@ public class BuilderPerson {
         person.setSetIsFree(free);
         return this;
     }
+    public BuilderPerson location(Point location){
+        person.setLocation(location);
+        return this;
+    }
     public Person build() {
         return person;
     }

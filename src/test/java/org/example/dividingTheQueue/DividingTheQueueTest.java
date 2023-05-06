@@ -22,7 +22,7 @@ class DividingTheQueueTest {
     @Test
     void sizeTheOrderTenAndTree() {
         DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<Integer> a = dividingTheQueue.sizeTheOrder(10,3);
+        List<Integer> a = dividingTheQueue.sizeTheOrder(2,0);
         System.out.println(a);
     }
     @Test

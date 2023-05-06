@@ -30,7 +30,7 @@ public class BuilderOrder {
         order.setPointFinish(pointFinish);
         return this;
     }
-    public BuilderOrder pointFinish (Time time) {
+    public BuilderOrder time (Time time) {
         order.setTime(time);
         return this;
     }

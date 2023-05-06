@@ -80,12 +80,12 @@ public class CourierPeople extends Person {
 
     @Override
     public String toString() {
-        return "CourierCar{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", speed=" + getSpeed() +
-                ", energy=" + getEnergy() +
-                ", free=" + getIsFree() +
+        return "CourierPeople{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", speed=" + speed +
+                ", energy=" + energy +
+                ", location=" + location +
                 '}';
     }
 
