@@ -1,4 +1,4 @@
-package org.example.fabricPerson.fabricOrder;
+package org.example.fabricOrder;
 
 import org.example.checkOrder.CheckOrder;
 import org.example.enumType.EnumOrder;
@@ -16,10 +16,10 @@ public class BuilderOrder {
         order = new Factory().getNewOrder(type);
     }
 
-    /*public BuilderOrder id (int id) {
+    public BuilderOrder id (int id) {
         order.setId(id);
         return this;
-    }*/
+    }
 
     public BuilderOrder pointStart (Point pointStart) {
         order.setPointStart(pointStart);

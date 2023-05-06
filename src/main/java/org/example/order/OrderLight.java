@@ -7,7 +7,7 @@ import org.example.time.Time;
 
 public class OrderLight extends Order {
 
-    private ID id;
+    private int id;
     private Point pointStart;
     private Point pointFinish;
     private Time time;
@@ -15,17 +15,17 @@ public class OrderLight extends Order {
 
     public OrderLight() {super();}
 
-    public OrderLight(ID id, Point pointStart, Point pointFinish, Time time, double weight) {
+    public OrderLight(int id, Point pointStart, Point pointFinish, Time time, double weight) {
         super(id, pointStart, pointFinish, time, weight);
     }
 
     @Override
-    public ID getId() {
+    public int getId() {
         return id;
     }
 
     @Override
-    public void setId(ID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

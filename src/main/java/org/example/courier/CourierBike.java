@@ -5,7 +5,7 @@ import org.example.abstractPerson.Person;
 import org.example.point.Point;
 
 public class CourierBike  extends Person{
-    private ID id;
+    private int id;
     private String name;
     private double speed;
     private double energy;
@@ -18,17 +18,17 @@ public class CourierBike  extends Person{
         super();
     }
 
-    public CourierBike(ID id, String name,double speed,double energy, Point location) {
+    public CourierBike(int id, String name,double speed,double energy, Point location) {
         super(id, name,speed,energy,location);
     }
 
     @Override
-    public ID getId() {
+    public int getId() {
         return id;
     }
 
     @Override
-    public void setId(ID id) {
+    public void setId(int id) {
         this.id = id;
     }
 

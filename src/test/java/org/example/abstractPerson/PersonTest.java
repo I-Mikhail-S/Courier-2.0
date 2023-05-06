@@ -11,7 +11,5 @@ class PersonTest {
 
     @Test
     void getId() throws Exception {
-        Person car = new BuilderPerson(EnumCourier.CAR).id(new PersonID()).build();
-        System.out.println(car.toString());
     }
 }
