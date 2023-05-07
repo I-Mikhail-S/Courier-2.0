@@ -1,4 +1,4 @@
-package org.example.dividingTheQueue;
+package org.example.firstSchedule;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
@@ -11,23 +11,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DividingTheQueueTest {
-
-    @Test
-    void sizeTheOrderTenAndFour() {
-        DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<Integer> a = dividingTheQueue.sizeTheOrder(10,4);
-        System.out.println(a);
-    }
-    @Test
-    void sizeTheOrderTenAndTree() {
-        DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<Integer> a = dividingTheQueue.sizeTheOrder(2,0);
-        System.out.println(a);
-    }
+class FirstScheduleTest {
 
     @Test
     void firstSchedule() {
+        FirstSchedule firstSchedule = new FirstSchedule();
         List<Order> orders = new ArrayList<>();
         orders.add(new Order(1,new Point(1,2),new Point(2,2),new Time("12:00","12:10"),10));
         orders.add(new Order(2,new Point(3,2),new Point(3,2),new Time("12:00","12:14"),11));
@@ -37,14 +25,10 @@ class DividingTheQueueTest {
         orders.add(new Order(6,new Point(1,4),new Point(9,7),new Time("12:00","12:21"),15));
         orders.add(new Order(7,new Point(2,6),new Point(4,7),new Time("12:00","12:22"),16));
         orders.add(new Order(8,new Point(7,7),new Point(3,5),new Time("12:00","12:23"),17));
-        List<Person > persons = new ArrayList<>();
+        List<Person> persons = new ArrayList<>();
         persons.add(new Person(1, "Stepan", 1, 2, new Point(2,2)));
         persons.add(new Person(2, "Ivan", 2, 3, new Point(3,3)));
         persons.add(new Person(3, "Misha", 3, 4, new Point(4,4)));
-        FirstPurpose firstPurpose =new FirstPurpose();
-        for (int i = 0; i < firstPurpose.firstPurpose(orders,persons).size(); i++) {
-            System.out.println(firstPurpose.firstPurpose(orders,persons).get(i));
-            System.out.println();
-        }
+        System.out.println(firstSchedule.firstSchedule(orders,persons));
     }
 }

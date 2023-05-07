@@ -8,12 +8,14 @@ public class Purpose {
     private Person courier;
     private Order order;
     private Point startPoint;
-    private int timeExecution; //время выполнения
+    private long timeExecution; //время выполнения
     private double routeLength; // длинна маршрута
 
-    public Purpose(Person courier, Order order, double routeLength) {
+    public Purpose(Person courier, Order order,Point point,long timeExecution, double routeLength) {
         this.courier = courier;
         this.order = order;
+        this.startPoint = point;
+        this.timeExecution = timeExecution;
         this.routeLength = routeLength;
     }
 
@@ -41,7 +43,7 @@ public class Purpose {
         this.startPoint = startPoint;
     }
 
-    public int getTimeExecution() {
+    public long getTimeExecution() {
         return timeExecution;
     }
 
@@ -62,7 +64,6 @@ public class Purpose {
         return "Purpose{" +
                 "courier=" + courier +
                 ", order=" + order +
-                ", startPoint=" + startPoint +
                 ", timeExecution=" + timeExecution +
                 ", routeLength=" + routeLength +
                 '}';

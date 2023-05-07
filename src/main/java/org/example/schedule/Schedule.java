@@ -1,49 +1,51 @@
 package org.example.schedule;
 
 import org.example.pupose.Purpose;
-<<<<<<< HEAD
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
+
 
 public class Schedule {
-    ArrayList<Purpose> allPurpose;
+    List<Purpose> allPurpose;
 
-    public Schedule(ArrayList<Purpose> allPurpose) {
+    public Schedule(List<Purpose> allPurpose) {
         this.allPurpose = allPurpose;
     }
 
-    public ArrayList<Purpose> getAllPurpose() {
+    public Schedule() {
+    }
+
+    public List<Purpose> getAllPurpose() {
         return allPurpose;
     }
 
-    public void setAllPurpose(ArrayList<Purpose> allPurpose) {
+    public void setAllPurpose(List<Purpose> allPurpose) {
         this.allPurpose = allPurpose;
     }
 
     public void addPurpose(Purpose purpose) {
         allPurpose.add(purpose);
     }
-=======
->>>>>>> 42a0d014c983583b66b6df04ca744cd4a4f2634b
 
-import java.util.ArrayList;
-
-public class Schedule {
-    ArrayList<Purpose> allPurpose;
-
-    public Schedule(ArrayList<Purpose> allPurpose) {
-        this.allPurpose = allPurpose;
+    @Override
+    public String toString() {
+        return "Schedule{" +
+                "allPurpose=" + allPurpose +
+                '}';
     }
 
-    public ArrayList<Purpose> getAllPurpose() {
-        return allPurpose;
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Schedule schedule = (Schedule) o;
+        return Objects.equals(allPurpose, schedule.allPurpose);
     }
 
-    public void setAllPurpose(ArrayList<Purpose> allPurpose) {
-        this.allPurpose = allPurpose;
-    }
-
-    public void addPurpose(Purpose purpose) {
-        allPurpose.add(purpose);
+    @Override
+    public int hashCode() {
+        return Objects.hash(allPurpose);
     }
 }
