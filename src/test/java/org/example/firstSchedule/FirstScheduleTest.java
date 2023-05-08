@@ -29,6 +29,6 @@ class FirstScheduleTest {
         persons.add(new Person(1, "Stepan", 1, 2, new Point(2,2)));
         persons.add(new Person(2, "Ivan", 2, 3, new Point(3,3)));
         persons.add(new Person(3, "Misha", 3, 4, new Point(4,4)));
-        System.out.println(firstSchedule.firstSchedule(orders,persons));
+        //System.out.println(firstSchedule.firstSchedule(orders,persons));
     }
 }
