@@ -3,6 +3,7 @@ package org.example.dividingTheQueue;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
+import org.example.pupose.Purpose;
 import org.example.time.Time;
 import org.junit.jupiter.api.Test;
 
@@ -11,29 +12,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class DividingTheQueueTest {
+class FirstScheduleTest {
+
 
     @Test
-    void sizeTheOrderTenAndFour() {
-        DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<Integer> a = dividingTheQueue.sizeTheOrder(10,4);
-        System.out.println(a);
-    }
-    @Test
-    void sizeTheOrderTenAndTree() {
-        DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<Integer> a = dividingTheQueue.sizeTheOrder(8,3);
-        System.out.println(a);
-    }
-
-    @Test
-    void firstSchedule() {
-        List<Integer> result = DividingTheQueue.sizeTheOrder(8, 5);
-        System.out.println(result);
-    }
-
-    @Test
-    void chopped() {
+    void testFirstPurpose() {
         List<Order> orders = new ArrayList();
         orders.add(new Order(1, new Point(1.0, 2.0), new Point(2.0, 2.0), new Time("12:00", "12:10"), 10.0));
         orders.add(new Order(2, new Point(3.0, 2.0), new Point(3.0, 2.0), new Time("12:00", "12:14"), 11.0));
@@ -43,10 +26,13 @@ class DividingTheQueueTest {
         orders.add(new Order(6, new Point(1.0, 4.0), new Point(9.0, 7.0), new Time("12:00", "12:21"), 15.0));
         orders.add(new Order(7, new Point(2.0, 6.0), new Point(4.0, 7.0), new Time("12:00", "12:22"), 16.0));
         orders.add(new Order(8, new Point(7.0, 7.0), new Point(3.0, 5.0), new Time("12:00", "12:23"), 17.0));
-        DividingTheQueue dividingTheQueue = new DividingTheQueue();
-        List<List<Order>> ordersLL = new ArrayList<>();
-        List<Integer> result = DividingTheQueue.sizeTheOrder(8, 5);
-        ordersLL=DividingTheQueue.chopped(orders,result);
-        System.out.println(ordersLL);
+        List<Person> persons = new ArrayList();
+        persons.add(new Person(1, "Stepan", 1.0, 2.0, new Point(2.0, 2.0)));
+        persons.add(new Person(2, "Ivan", 2.0, 3.0, new Point(3.0, 3.0)));
+        persons.add(new Person(3, "Misha", 3.0, 4.0, new Point(4.0, 4.0)));
+        FirstSchedule firstSchedule = new FirstSchedule();
+       for (Purpose purpose:firstSchedule.firstPurpose(orders,persons)){
+           System.out.println(purpose);
+       }
     }
 }
