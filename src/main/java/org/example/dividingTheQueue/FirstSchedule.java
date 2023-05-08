@@ -11,10 +11,16 @@ import org.example.schedule.Schedule;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD:src/main/java/org/example/dividingTheQueue/FirstSchedule.java
 public class FirstSchedule {
     public List<Purpose> firstPurpose(List<Order> listOrder, List<Person> listPerson) {
+=======
+public class FirstPurpose {
+    public static Schedule firstPurpose (List<Order> listOrder, List<Person> listPerson){
+
         List<List<Order>> orders = new ArrayList<>();
-        List<Purpose> allDividingPurpose = new ArrayList<>();
+        Schedule firstScheduleTotal = new Schedule();
+        //List<Purpose> allDividingPurpose = new ArrayList<>();
         List<Integer> result = DividingTheQueue.sizeTheOrder(listOrder.size(), listPerson.size());
             orders = DividingTheQueue.chopped(listOrder, result);
         for (int i = 0; i < result.size(); i++) {
@@ -29,6 +35,5 @@ public class FirstSchedule {
                 allDividingPurpose.add(helpPurpose);
             }
         }
-        return allDividingPurpose;
     }
 }

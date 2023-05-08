@@ -1,5 +1,6 @@
 package org.example.schedule;
 
+import org.example.abstractPerson.Person;
 import org.example.pupose.Purpose;
 
 import java.util.ArrayList;
@@ -11,10 +12,11 @@ public class Schedule {
     List<Purpose> allPurpose;
 
     public Schedule(List<Purpose> allPurpose) {
-        this.allPurpose = allPurpose;
+        this.allPurpose =  allPurpose;
     }
 
     public Schedule() {
+        this.allPurpose = new ArrayList<>();
     }
 
     public List<Purpose> getAllPurpose() {
@@ -27,6 +29,11 @@ public class Schedule {
 
     public void addPurpose(Purpose purpose) {
         allPurpose.add(purpose);
+    }
+
+    public Schedule merge (List<Purpose> listSecond) {
+        this.allPurpose.addAll(listSecond);
+        return this;
     }
 
     @Override

@@ -2,6 +2,7 @@ package org.example.pupose;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
+import org.example.money.Money;
 import org.example.point.Point;
 
 public class Purpose {
@@ -10,6 +11,7 @@ public class Purpose {
     private Point startPoint;
     private long timeExecution; //время выполнения
     private double routeLength; // длинна маршрута
+    private double income; //доход (не прибыль)
 
     public Purpose(Person courier, Order order,Point point,long timeExecution, double routeLength) {
         this.courier = courier;
@@ -17,6 +19,7 @@ public class Purpose {
         this.startPoint = point;
         this.timeExecution = timeExecution;
         this.routeLength = routeLength;
+        this.income = Money.moneySum(courier, order);
     }
 
     public Person getCourier() {
@@ -59,13 +62,23 @@ public class Purpose {
         this.routeLength = routeLength;
     }
 
+    public double getIncome() {
+        return income;
+    }
+
+    public void setIncome(double income) {
+        this.income = income;
+    }
+
     @Override
     public String toString() {
         return "Purpose{" +
                 "courier=" + courier +
                 ", order=" + order +
+                ", startPoint=" + startPoint +
                 ", timeExecution=" + timeExecution +
                 ", routeLength=" + routeLength +
+                ", income=" + income +
                 '}';
     }
 }

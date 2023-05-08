@@ -2,7 +2,10 @@ package org.example.abstractPerson;
 
 import org.example.ID.ID;
 import org.example.point.Point;
+import org.example.pupose.Purpose;
+import org.example.schedule.Schedule;
 
+import javax.print.attribute.standard.SheetCollate;
 import java.util.Objects;
 
 /**
@@ -17,6 +20,8 @@ public  class Person {
     private Point location;
 
     private boolean setIsFree;
+
+    private Schedule schedule;
     public boolean getIsFree() {
         return setIsFree;
     }
@@ -33,6 +38,7 @@ public  class Person {
         this.speed = speed;
         this.energy = energy;
         this.location = location;
+        this.schedule = new Schedule();
     }
 
     public int getId() {
@@ -73,6 +79,14 @@ public  class Person {
 
     public void setLocation(Point location) {
         this.location = location;
+    }
+
+    public Schedule getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(Schedule schedule) {
+        this.schedule = schedule;
     }
 
     @Override
