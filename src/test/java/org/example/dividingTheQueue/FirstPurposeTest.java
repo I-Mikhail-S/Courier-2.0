@@ -33,7 +33,7 @@ class FirstPurposeTest {
         persons.add(new Person(2, "Ivan", 2.0, 3.0, new Point(3.0, 3.0)));
         persons.add(new Person(3, "Misha", 3.0, 4.0, new Point(4.0, 4.0)));
         FirstSchedule firstSchedule = new FirstSchedule();
-        for (Schedule schedule:firstSchedule.firstSchedule(orders,persons)){
+        for (Purpose schedule:firstSchedule.firstSchedule(orders,persons)){
             System.out.println(schedule);
         }
     }

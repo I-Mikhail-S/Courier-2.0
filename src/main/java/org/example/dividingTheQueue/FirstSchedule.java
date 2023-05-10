@@ -13,15 +13,18 @@ import java.util.List;
 
 
 public class FirstSchedule {
-    public static List<Schedule> firstSchedule(List<Order> listOrder, List<Person> listPerson) {
-
+    public static List<Purpose> firstSchedule(List<Order> listOrder, List<Person> listPerson) {
+        int size = listOrder.size();
         List<List<Order>> orders;
-        List<Schedule> allDividingSchedule = new ArrayList<>();
+        List<Purpose> allDividingSchedule = new ArrayList<>();
         List<Purpose> allDividingPurpose = new ArrayList<>();
         List<Integer> result = DividingTheQueue.sizeTheOrder(listOrder.size(), listPerson.size());
         orders = DividingTheQueue.chopped(listOrder, result);
-        for (int i = 0; i < result.size(); i++) {
-            for (int j = 0; j < result.get(i); j++) {
+        int i =0;
+        int f =0;
+        int j = 0;
+        while(f<result.size()) {
+            for (; j < result.get(i);) {
                 Purpose helpPurpose = new Purpose(
                         listPerson.get(i),
                         orders.get(i).get(j),
@@ -29,9 +32,16 @@ public class FirstSchedule {
                         TimeCalculate.getTime(listPerson.get(i), orders.get(i).get(j)),
                         DistanceCalculate.getDistance(listPerson.get(i), orders.get(i).get(j)));
                 allDividingPurpose.add(helpPurpose);
+                if(result.get(i)<=i){
+                  break;
+                }
+                i++;
             }
+
+            i=0;
+            f+=1;
+            j=f;
         }
-        allDividingSchedule.add(new Schedule(allDividingPurpose));
-        return allDividingSchedule;
+        return allDividingPurpose;
     }
 }
