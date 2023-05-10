@@ -3,14 +3,13 @@ package org.example.dividingTheQueue;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 class DividingTheQueue {
     private static int index = 0;
     static public List<List<Order>> chopped(List<Order> list, List<Integer> L) {
         List<List<Order>> parts = new ArrayList<List<Order>>();
+        list.sort(Order::compareTo);
         final int N = list.size();
         while(list.size()!=0) {
             parts.add(new ArrayList<Order>(list.subList(0, L.get(index))));
@@ -47,6 +46,7 @@ class DividingTheQueue {
             Integer prev = allDividingNumber.get(j) + one;
             allDividingNumber.set(j, prev);
         }
+        Collections.shuffle(allDividingNumber);
         return allDividingNumber;
     }
 }
