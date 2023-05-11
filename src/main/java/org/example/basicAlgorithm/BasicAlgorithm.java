@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BasicAlgorithm {
 
-/*    public static Schedule basicAlgorithm (List<Person> allPerson, List<Order> unUsedOrder, Schedule schedule) {
+    public static Schedule basicAlgorithm (List<Person> allPerson, List<Order> unUsedOrder, Schedule schedule) {
 
         for (Purpose helpPurpose : schedule.getAllPurpose()) {
             for (Person helpPerson : allPerson) {
@@ -19,7 +19,7 @@ public class BasicAlgorithm {
             }
 
         }
-
-    }*/
+        return ;
+    }
 
 }

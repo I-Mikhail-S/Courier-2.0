@@ -2,6 +2,7 @@ package org.example.firstSchedule;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
+import org.example.dividingTheQueue.FirstSchedule;
 import org.example.point.Point;
 import org.example.time.Time;
 import org.junit.jupiter.api.Test;

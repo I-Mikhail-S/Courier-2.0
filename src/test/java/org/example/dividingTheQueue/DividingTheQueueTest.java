@@ -42,10 +42,10 @@ class DividingTheQueueTest {
         persons.add(new Person(1, "Stepan", 1, 2, new Point(2,2)));
         //persons.add(new Person(2, "Ivan", 2, 3, new Point(3,3)));
         //persons.add(new Person(3, "Misha", 3, 4, new Point(4,4)));
-        FirstPurpose firstPurpose = new FirstPurpose();
-        for (int i = 0; i < firstPurpose.firstPurpose(orders,persons).getAllPurpose().size(); i++) {
-            System.out.println(firstPurpose.firstPurpose(orders,persons).getAllPurpose().get(i));
+        FirstSchedule firstPurpose = new FirstSchedule();
+        /*for (int i = 0; i < firstPurpose.firstSchedule(orders,persons).getAllPurpose().size(); i++) {
+            System.out.println(firstPurpose.firstSchedule(orders,persons).getAllPurpose().get(i));
             System.out.println();
-        }
+        }*/
     }
 }
