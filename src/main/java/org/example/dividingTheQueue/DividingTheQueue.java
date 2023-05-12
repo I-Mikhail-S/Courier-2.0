@@ -46,7 +46,7 @@ class DividingTheQueue {
             Integer prev = allDividingNumber.get(j) + one;
             allDividingNumber.set(j, prev);
         }
-        Collections.shuffle(allDividingNumber);
+
         return allDividingNumber;
     }
 }
