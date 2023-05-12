@@ -10,13 +10,13 @@ import org.example.schedule.Schedule;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 
 public class FirstSchedule {
-    public static List<Purpose> firstSchedule(List<Order> listOrder, List<Person> listPerson) {
-        int size = listOrder.size();
+    public static Schedule firstSchedule(List<Order> listOrder, List<Person> listPerson) {
         List<List<Order>> orders;
-        List<Purpose> allDividingSchedule = new ArrayList<>();
         List<Purpose> allDividingPurpose = new ArrayList<>();
         List<Integer> result = DividingTheQueue.sizeTheOrder(listOrder.size(), listPerson.size());
         orders = DividingTheQueue.chopped(listOrder, result);
@@ -25,15 +25,10 @@ public class FirstSchedule {
         int j = 0;
         while(f<result.size()) {
             for (; j < result.get(i);) {
-                Purpose helpPurpose = new Purpose(
-                        listPerson.get(i),
-                        orders.get(i).get(j),
-                        new Point(orders.get(i).get(j).getPointFinish().getX(), orders.get(i).get(j).getPointFinish().getX()),
-                        TimeCalculate.getTime(listPerson.get(i), orders.get(i).get(j)),
-                        DistanceCalculate.getDistance(listPerson.get(i), orders.get(i).get(j)));
+                Purpose helpPurpose = new Purpose( listPerson.get(f),orders.get(i).get(j));
                 allDividingPurpose.add(helpPurpose);
                 if(result.get(i)<=i){
-                  break;
+                    break;
                 }
                 i++;
             }
@@ -42,6 +37,7 @@ public class FirstSchedule {
             f+=1;
             j=f;
         }
-        return allDividingPurpose;
+        Schedule firstSchedule = new Schedule(allDividingPurpose);
+        return firstSchedule;
     }
 }

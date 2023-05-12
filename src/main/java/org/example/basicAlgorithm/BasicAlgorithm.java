@@ -11,18 +11,18 @@ import java.util.List;
 
 public class BasicAlgorithm {
 
-/*    public static Schedule basicAlgorithm (List<Person> allPerson, List<Order> unUsedOrder, Schedule schedule) {
+    public static Schedule basicAlgorithm (List<Person> allPerson, List<Order> unUsedOrder, Schedule schedule) {
 
         for (Person helpPerson : allPerson) {
             for (Order helpOrder : unUsedOrder) {
-                Purpose ideaPurpose = new Purpose(helpPerson, helpOrder, helpPerson.getLocation(),
-                        TimeCalculate.getTime(helpPerson, helpOrder),
-                        DistanceCalculate.getDistance(helpPerson, helpOrder));
+                Purpose ideaPurpose = new Purpose(helpPerson, helpOrder);
+                if (helpOrder.getTime().getStartTimeInterval().equals(helpOrder.getTime().getEndTimeInterval()))
+
             }
         }
 
 
         return ;
-    }*/
+    }
 
 }

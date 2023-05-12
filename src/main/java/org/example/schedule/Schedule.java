@@ -9,7 +9,7 @@ import java.util.Objects;
 
 
 public class Schedule {
-    List<Purpose> allPurpose;
+    private List<Purpose> allPurpose;
 
     public Schedule(List<Purpose> allPurpose) {
         this.allPurpose =  allPurpose;
@@ -41,6 +41,12 @@ public class Schedule {
         return "Schedule{" +
                 "allPurpose=" + allPurpose +
                 '}';
+    }
+
+    public void beautifulString() {
+        for (Purpose helpPurpose : allPurpose) {
+            System.out.println(helpPurpose);
+        }
     }
 
     @Override
