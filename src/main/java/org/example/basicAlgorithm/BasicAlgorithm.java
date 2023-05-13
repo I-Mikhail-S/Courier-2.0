@@ -16,13 +16,15 @@ public class BasicAlgorithm {
         for (Person helpPerson : allPerson) {
             for (Order helpOrder : unUsedOrder) {
                 Purpose ideaPurpose = new Purpose(helpPerson, helpOrder);
-                if (helpOrder.getTime().getStartTimeInterval().equals(helpOrder.getTime().getEndTimeInterval()))
+                if (helpOrder.getTime().getStartTimeInterval().equals(helpOrder.getTime().getEndTimeInterval())){
+
+                }
 
             }
         }
 
 
-        return ;
+        return null;
     }
 
 }

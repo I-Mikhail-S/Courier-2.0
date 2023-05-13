@@ -3,7 +3,9 @@ package org.example.courier;
 import org.example.ID.ID;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
-
+/**
+ * Курьер на машине, наследник {@link Person}
+ */
 public class CourierCar extends Person {
     private int id;
     private String name;

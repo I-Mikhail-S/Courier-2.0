@@ -1,34 +1,31 @@
 package org.example.abstractOrder;
-
-import org.example.ID.ID;
-import org.example.enumType.EnumOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
-<<<<<<< HEAD
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Comparator;
-import java.util.Date;
-
 // TODO: 08/04/2023
-public class Order  {
-    private int id;
-=======
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-
-// TODO: 08/04/2023
-
-public class Order  {
-    private int id;//
->>>>>>> 667322ab6ba77f3160826a7ac23c6bde09be4f77
-    private Point pointStart;
-    private Point pointFinish;
+/**
+ *  Фундаментальны класс, основные характеристики
+ *
+ *  id, {@link Point} начальная точка заказа (метры),
+ *
+ *   {@link Point} конечная точка заказа (метры),
+ *
+ *   {@link Time} время выполнения (формат "X:Y"), вес (кг).
+ *
+ *
+ *  Класс {@link Order} является родительским для трех его потомков:
+ *
+ *  {@link org.example.order.OrderLight} , {@link org.example.order.OrderMedium},
+ *
+ *  {@link org.example.order.OrderHard}
+ */
+public class Order {
+    private int id;//Уникальный номер заказа
+    private Point pointStart;//Точка сбора
+    private Point pointFinish;//Точка доставки
     //private double distance;
-    private Time time;
-    private double weight;
+    private Time time;//Время
+    private double weight;//Вес
     public boolean flag;
 
     public Order() {
@@ -102,39 +99,5 @@ public class Order  {
                 '}';
     }
 
-<<<<<<< HEAD
-   class SortedOrder implements Comparator<Order>{
-       @Override
-       public int compare(Order o1, Order o2) {
-           Date date1FirstOrder;
-           Date date2FirstOrder;
-           Date date1SecondOrder;
-           Date date2SecondOrder;
-           SimpleDateFormat sdf = new SimpleDateFormat("h:m");
-           try {
-               date1FirstOrder = sdf.parse(o1.getTime().getStartTimeInterval());
-               date2FirstOrder = sdf.parse(o1.getTime().getEndTimeInterval());
-               date1SecondOrder = sdf.parse(o2.getTime().getStartTimeInterval());
-               date2SecondOrder = sdf.parse(o2.getTime().getEndTimeInterval());
-
-           } catch (ParseException e) {
-               throw new RuntimeException(e);
-           }
-
-           if (date2SecondOrder.before(date2FirstOrder)){
-               return 1;
-           }
-           if(date2FirstOrder.equals(date1SecondOrder)){
-               if(date1FirstOrder.before(date1SecondOrder)){
-                   return -1;
-               }
-           }
-           return 0;
-       }
-   }
-=======
-
-
-
->>>>>>> 667322ab6ba77f3160826a7ac23c6bde09be4f77
 }
+

@@ -3,7 +3,9 @@ package org.example.courier;
 import org.example.ID.ID;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
-
+/**
+ * Курьер на мотоцикле, наследник {@link Person}
+ */
 public class CourierBike  extends Person{
     private int id;
     private String name;
@@ -12,7 +14,6 @@ public class CourierBike  extends Person{
     private boolean free;
     private Point location;
 
-    //Объясните, пожалуйста, вы забыли про поле free или так надо?
 
     public CourierBike() {
         super();

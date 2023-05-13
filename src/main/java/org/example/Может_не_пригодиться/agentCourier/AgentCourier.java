@@ -1,11 +1,8 @@
-package org.example.agentCourier;
+package org.example.Может_не_пригодиться.agentCourier;
 
 import org.example.ID.ID;
-import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
-
-import java.util.ArrayList;
 
 public class AgentCourier extends Person {
     private ID id; //id непонятно как использовать
