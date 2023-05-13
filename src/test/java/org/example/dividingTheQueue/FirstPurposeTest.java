@@ -8,6 +8,7 @@ import org.example.schedule.Schedule;
 import org.example.time.Time;
 import org.junit.jupiter.api.Test;
 
+import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class FirstPurposeTest {
 
     @Test
-    void firstPurpose() {
+    void firstPurpose() throws ParseException {
         List<Order> orders = new ArrayList<>();
 
         orders.add(new Order(1, new Point(1.0, 2.0), new Point(2.0, 2.0), new Time("12:00", "12:15"), 10.0));

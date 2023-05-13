@@ -5,6 +5,7 @@ import org.example.enumType.EnumOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
+<<<<<<< HEAD
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Comparator;
@@ -13,6 +14,16 @@ import java.util.Date;
 // TODO: 08/04/2023
 public class Order  {
     private int id;
+=======
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
+// TODO: 08/04/2023
+
+public class Order  {
+    private int id;//
+>>>>>>> 667322ab6ba77f3160826a7ac23c6bde09be4f77
     private Point pointStart;
     private Point pointFinish;
     //private double distance;
@@ -91,6 +102,7 @@ public class Order  {
                 '}';
     }
 
+<<<<<<< HEAD
    class SortedOrder implements Comparator<Order>{
        @Override
        public int compare(Order o1, Order o2) {
@@ -120,4 +132,9 @@ public class Order  {
            return 0;
        }
    }
+=======
+
+
+
+>>>>>>> 667322ab6ba77f3160826a7ac23c6bde09be4f77
 }
