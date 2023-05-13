@@ -2,23 +2,30 @@ package org.example.pupose;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
+import org.example.distanceAndTime.DistanceCalculate;
+import org.example.distanceAndTime.TimeCalculate;
 import org.example.money.Money;
 import org.example.point.Point;
+import org.example.time.Time;
 
 public class Purpose {
     private Person courier;
     private Order order;
     private Point startPoint;
+    private Point endPoint;
+    private Time timeStart;
+    private Time timeFinish;
     private long timeExecution; //время выполнения
     private double routeLength; // длинна маршрута
     private double income; //доход (не прибыль)
 
-    public Purpose(Person courier, Order order,Point point,long timeExecution, double routeLength) {
+    public Purpose(Person courier, Order order) {
         this.courier = courier;
         this.order = order;
-        this.startPoint = point;
-        this.timeExecution = timeExecution;
-        this.routeLength = routeLength;
+        this.startPoint = courier.getLocation();
+        this.endPoint = order.getPointFinish();
+        this.routeLength = DistanceCalculate.getDistance(courier, order);
+
         this.income = Money.moneySum(courier, order);
     }
 
@@ -76,7 +83,7 @@ public class Purpose {
                 "courier=" + courier +
                 ", order=" + order +
                 ", startPoint=" + startPoint +
-                ", timeExecution=" + timeExecution +
+                ", timeExecution=" + timeExecution + "минуты" +
                 ", routeLength=" + routeLength +
                 ", income=" + income +
                 '}';
