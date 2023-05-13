@@ -9,7 +9,8 @@ class DividingTheQueue {
     private static int index = 0;
     static public List<List<Order>> chopped(List<Order> list, List<Integer> L) {
         List<List<Order>> parts = new ArrayList<List<Order>>();
-        list.sort(Order::compareTo);
+        Comparator sortedOrder = new SortedOrder();
+        Collections.sort(parts, sortedOrder);
         final int N = list.size();
         while(list.size()!=0) {
             parts.add(new ArrayList<Order>(list.subList(0, L.get(index))));
