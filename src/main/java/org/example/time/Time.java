@@ -51,11 +51,6 @@ public class Time {
     }
 
     @Override
-    public int hashCode() {
-        return Objects.hash(startTimeInterval, endTimeInterval);
-    }
-
-    @Override
     public String toString() {
         return "Time{" +
                 "startTimeInterval='" + startTimeInterval + '\'' +

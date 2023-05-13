@@ -16,7 +16,6 @@ class OrderTest {
         List<Order> testCompareOrder = new ArrayList<>();
         testCompareOrder.add(new Order(1234,new Point(1,2),new Point(2,3),new Time("12:00","12:16"),3));
         testCompareOrder.add(new Order(1234,new Point(3,2),new Point(4,3),new Time("12:00","12:19"),4));
-        testCompareOrder.sort(Order::compareTo);
         assertEquals(16,testCompareOrder.get(0).getTime().getTimeLongMinute(),16);
     }
 }

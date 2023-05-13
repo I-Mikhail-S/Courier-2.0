@@ -5,9 +5,14 @@ import org.example.enumType.EnumOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+
 // TODO: 08/04/2023
-public class Order implements Comparable<Order> {
-    private int id;
+
+public class Order  {
+    private int id;//
     private Point pointStart;
     private Point pointFinish;
     //private double distance;
@@ -80,9 +85,7 @@ public class Order implements Comparable<Order> {
                 '}';
     }
 
-    @Override
-    public int compareTo(Order o) {
-        return (int) ((int) getTime().getTimeBuilder().getTime(time.getStartTimeInterval(),time.getEndTimeInterval())-
-                        o.getTime().getTimeBuilder().getTime(o.getTime().getStartTimeInterval(),o.getTime().getEndTimeInterval()));
-    }
+
+
+
 }
