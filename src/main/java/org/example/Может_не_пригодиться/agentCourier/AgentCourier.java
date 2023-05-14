@@ -1,6 +1,6 @@
 package org.example.Может_не_пригодиться.agentCourier;
 
-import org.example.ID.ID;
+import org.example.Может_не_пригодиться.ID.ID;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
 

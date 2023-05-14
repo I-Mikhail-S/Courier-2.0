@@ -3,11 +3,18 @@ package org.example.pupose;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.distanceAndTime.DistanceCalculate;
-import org.example.distanceAndTime.TimeCalculate;
 import org.example.money.Money;
 import org.example.point.Point;
 import org.example.time.Time;
-
+/**
+ * Класс создает цель которую курьер должен выполнить для рассписания, поля для этого:
+ * {@link Purpose#courier} курьер,
+ * {@link Purpose#order} заказ,
+ * {@link Purpose#startPoint} точка куда курьеру надо доставить заказ,
+ * {@link Purpose#timeExecution} время, за которое, курьер сможет донести заказ,
+ * {@link Purpose#routeLength} расстояние, которое пройдет курьер от точки сбора до клиента
+ * {@link Purpose#income} доход за заказ
+ */
 public class Purpose {
     private Person courier;
     private Order order;

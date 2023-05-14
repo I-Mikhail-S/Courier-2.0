@@ -1,27 +1,18 @@
 package org.example.randomGenerateOrder;
 
-import com.github.javafaker.Faker;
-import org.apache.commons.lang3.RandomUtils;
 import org.example.abstractOrder.Order;
-import org.example.abstractPerson.Person;
-import org.example.enumType.EnumCourier;
 import org.example.enumType.EnumOrder;
 import org.example.fabricOrder.BuilderOrder;
-import org.example.fabricPerson.BuilderPerson;
 import org.example.point.Point;
-import org.example.time.TimeBuilder;
 
+import org.example.time.TimeBuilder;
 import java.sql.Time;
-import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 import java.util.Random;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+/**
+ * Класс генерирует заказы {@link Order} с разными полями для стресс теста
+ */
 public class RandomOrder {
     private List<Order> orderList = new ArrayList<>();
     public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
@@ -58,8 +49,11 @@ public class RandomOrder {
         time.add(timeParseTwo);
         return time;
     }
-    public List<Order> getAllList() throws Exception {
-        for (int i = 0; i < 100; i++) {
+    /**
+     * Метод {@link RandomOrder#getAllList}  генерирует колличество заказов по передаваемому числу.
+     */
+    public List<Order> getAllList(int count) throws Exception {
+        for (int i = 0; i < count; i++) {
             orderList.add(new BuilderOrder(randomEnum(EnumOrder.class)).id(generateId()).
                             pointStart(new Point(generateNumber(0,100),generateNumber(0,100))).
                             pointFinish(new Point(generateNumber(0,100),generateNumber(0,100))).

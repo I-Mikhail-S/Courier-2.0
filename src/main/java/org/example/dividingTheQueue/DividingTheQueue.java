@@ -6,10 +6,15 @@ import org.example.distanceAndTime.SortedOrder;
 
 import java.text.ParseException;
 import java.util.*;
-
+/**
+ * Вспомогательный класс,  необходимый для создания первичного рассписания и логирования
+ */
 class DividingTheQueue {
     private static int index = 0;
-
+    /**
+     * {@link DividingTheQueue#chopped(List, List)} Метод который позволяет создовать лист листов ,
+     * для дальнейшего расспределения заказов между курьерми
+     */
     static public List<List<Order>> chopped(List<Order> list, List<Integer> L) throws ParseException {
 
         List<List<Order>> parts = new ArrayList<>();
@@ -23,14 +28,11 @@ class DividingTheQueue {
         }
         return parts;
     }
-
-    private static List<List<Order>> cutTheQueue(List<Order> orders, List<Person> persons) throws ParseException {
-        List<List<Order>> listOrders = new ArrayList<>();
-        List<Integer> result = sizeTheOrder(orders.size(), persons.size());
-        listOrders = chopped(orders, result);
-        return listOrders;
-    }
-
+    /**
+     * {@link DividingTheQueue#sizeTheOrder(int, int)} На основе количества заказаов, и количества курьеров может сделать расспределение.
+     * В случае если закаозов больше, чем курьеров, заказы могут оптимально расспределиться между курьерами.
+     *
+     */
     public static List<Integer> sizeTheOrder(int sizeOrder, int sizePerson) {
         List<Integer> allDividingNumber = new ArrayList<>();
         double coefficient = sizeOrder / sizePerson;

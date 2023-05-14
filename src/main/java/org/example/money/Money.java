@@ -3,7 +3,9 @@ package org.example.money;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
-
+/**
+ * Класс позволяет рассчита приносимую прибыль с заказа(до работать: с объяснением коэфицента)
+ */
 public class Money {
     private static double sum;
 

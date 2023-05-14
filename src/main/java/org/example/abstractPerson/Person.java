@@ -1,11 +1,8 @@
 package org.example.abstractPerson;
 
-import org.example.ID.ID;
 import org.example.point.Point;
-import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
 
-import javax.print.attribute.standard.SheetCollate;
 import java.util.Objects;
 
 /**
@@ -13,6 +10,9 @@ import java.util.Objects;
  * id-уникальный номер,name - Имя курьера, Speed - скорость курьера(м\с),
  * energy - максимальная грузоподъемность курьера(кг), location - местоположение курьера(м),
  * schedule - рассписание курьера
+ * Класс {@link Person} является родительским для трех его потомков:
+ *{@link org.example.courier.CourierBike} , {@link org.example.courier.CourierCar},
+ *{@link org.example.courier.CourierPeople}
  */
 public  class Person {
 

@@ -1,7 +1,12 @@
 package org.example.time;
 
-import java.util.Objects;
+import org.example.pupose.Purpose;
+import org.example.schedule.Schedule;
 
+import java.util.Objects;
+/**
+ * Класс необходимый для создания времени по формату (X:Y), где X =  {@link Time#startTimeInterval} начало интервала, а где Y =  {@link Time#endTimeInterval} конца интервала
+ */
 public class Time {
     private String startTimeInterval;
     private String endTimeInterval;

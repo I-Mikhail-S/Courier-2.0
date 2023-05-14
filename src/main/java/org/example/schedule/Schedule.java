@@ -1,13 +1,12 @@
 package org.example.schedule;
-
 import org.example.abstractPerson.Person;
 import org.example.pupose.Purpose;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
-
+/**
+ * Класс необходимый для создания рассписания курьеров основанный на {@link Purpose} хранящиеся в {@link Schedule#allPurpose}
+ */
 public class Schedule {
     private List<Purpose> allPurpose;
 
