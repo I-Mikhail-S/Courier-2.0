@@ -10,9 +10,13 @@ import java.util.Objects;
 
 public class Schedule {
     private List<Purpose> allPurpose;
+    private double incomeSchedule;
 
     public Schedule(List<Purpose> allPurpose) {
-        this.allPurpose =  allPurpose;
+        this.allPurpose = allPurpose;
+        for (Purpose helpPurpose : allPurpose) {
+            this.incomeSchedule += helpPurpose.getIncome();
+        }
     }
 
     public Schedule() {
@@ -34,6 +38,10 @@ public class Schedule {
     public Schedule merge (List<Purpose> listSecond) {
         this.allPurpose.addAll(listSecond);
         return this;
+    }
+
+    public double getIncomeSchedule() {
+        return incomeSchedule;
     }
 
     @Override

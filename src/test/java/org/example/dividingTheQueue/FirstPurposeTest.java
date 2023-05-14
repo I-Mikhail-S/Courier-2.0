@@ -36,8 +36,6 @@ class FirstPurposeTest {
         Schedule firstSchedule = FirstSchedule.firstSchedule(orders, persons);
         firstSchedule.beautifulString();
         System.out.println(persons.get(0).getSchedule().getAllPurpose());
-
-        orders.add(new Order(9, new Point(7.0, 1.0), new Point(1.0, 7.0), new Time("15:00", "16:00"), 14.0));
-        orders.add(new Order(10, new Point(1.0, 4.0), new Point(9.0, 7.0), new Time("14:00", "15:00"), 15.0));
+        System.out.println(firstSchedule);
     }
 }
