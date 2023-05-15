@@ -1,10 +1,11 @@
 package org.example.order;
 
-import org.example.ID.ID;
 import org.example.abstractOrder.Order;
 import org.example.point.Point;
 import org.example.time.Time;
-
+/**
+ * Малый заказ,ограничения по {@link OrderLight#weight} не > 3, наследник {@link Order}
+ */
 public class OrderLight extends Order {
 
     private int id;

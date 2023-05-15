@@ -5,12 +5,12 @@ import org.example.abstractPerson.Person;
 import org.example.enumType.EnumCourier;
 import org.example.fabricPerson.BuilderPerson;
 import org.example.point.Point;
-
-import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+/**
+ * Класс генерирует курьеров {@link Person} с разными полями для стресс теста
+ */
 public class RandomPeople {
     private List<Person> personList = new ArrayList<>();
     public static <T extends Enum<?>> T randomEnum(Class<T> clazz){
@@ -32,8 +32,11 @@ public class RandomPeople {
        int randomNum =  rn.nextInt(range) + min;
        return randomNum;
    }
-   public List<Person> getAllList() throws Exception {
-       for (int i = 0; i < 100; i++) {
+    /**
+     * Метод {@link RandomPeople#generateNumber}  генерирует колличество заказов по передаваемому числу.
+     */
+   public List<Person> getAllList(int count) throws Exception {
+       for (int i = 0; i < count; i++) {
            personList.add(new BuilderPerson(randomEnum(EnumCourier.class)).id(generateId()).
                    name(generateName()).
                    speed(generateNumber(1,30)).energy(generateNumber(1,30)).

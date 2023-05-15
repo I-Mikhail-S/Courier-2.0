@@ -1,6 +1,6 @@
 package org.example.fabricPerson;
 
-import org.example.ID.ID;
+
 import org.example.checkCourier.CheckCourier;
 import org.example.checkCourier.ICheckCourier;
 import org.example.courier.CourierBike;
@@ -9,7 +9,9 @@ import org.example.courier.CourierPeople;
 import org.example.enumType.EnumCourier;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
-
+/**
+ * Реализация шаблона фабрики и билдера для создания курьера по индивидуальным параметрам
+ */
 public class BuilderPerson {
 
     Person person;

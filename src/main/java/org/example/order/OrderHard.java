@@ -1,10 +1,12 @@
 package org.example.order;
 
-import org.example.ID.ID;
 import org.example.abstractOrder.Order;
+import org.example.abstractPerson.Person;
 import org.example.point.Point;
 import org.example.time.Time;
-
+/**
+ * Большой заказ,ограничения по {@link OrderHard#weight} не > 10, наследник {@link Order}
+ */
 public class OrderHard extends Order {
     private int id;
     private Point pointStart;

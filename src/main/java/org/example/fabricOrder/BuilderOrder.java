@@ -8,7 +8,9 @@ import org.example.order.OrderLight;
 import org.example.order.OrderMedium;
 import org.example.point.Point;
 import org.example.time.Time;
-
+/**
+ * Реализация шаблона фабрики и билдера для создания заказа по индивидуальным параметрам
+ */
 public class BuilderOrder {
     Order order;
 
@@ -28,6 +30,10 @@ public class BuilderOrder {
 
     public BuilderOrder pointFinish (Point pointFinish) {
         order.setPointFinish(pointFinish);
+        return this;
+    }
+    public BuilderOrder weight (double weight) {
+        order.setWeight(weight);
         return this;
     }
     public BuilderOrder time (Time time) {

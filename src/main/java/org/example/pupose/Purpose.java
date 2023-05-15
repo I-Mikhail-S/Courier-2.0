@@ -1,5 +1,6 @@
 package org.example.pupose;
 
+import jdk.jshell.execution.Util;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.distanceAndTime.DistanceCalculate;
@@ -7,14 +8,23 @@ import org.example.distanceAndTime.TimeCalculate;
 import org.example.money.Money;
 import org.example.point.Point;
 import org.example.time.Time;
+import org.example.utils.Utils;
 
+/**
+ * Класс создает цель которую курьер должен выполнить для рассписания, поля для этого:
+ * {@link Purpose#courier} курьер,
+ * {@link Purpose#order} заказ,
+ * {@link Purpose#startPoint} точка куда курьеру надо доставить заказ,
+ * {@link Purpose#timeExecution} время, за которое, курьер сможет донести заказ,
+ * {@link Purpose#routeLength} расстояние, которое пройдет курьер от точки сбора до клиента
+ * {@link Purpose#income} доход за заказ
+ */
 public class Purpose {
     private Person courier;
     private Order order;
     private Point startPoint;
     private Point endPoint;
-    private Time timeStart;
-    private Time timeFinish;
+    private Time timeExecutionTime;
     private long timeExecution; //время выполнения
     private double routeLength; // длинна маршрута
     private double income; //доход (не прибыль)
@@ -25,8 +35,12 @@ public class Purpose {
         this.startPoint = courier.getLocation();
         this.endPoint = order.getPointFinish();
         this.routeLength = DistanceCalculate.getDistance(courier, order);
-
+        this.timeExecution = TimeCalculate.getTime(courier, order);
         this.income = Money.moneySum(courier, order);
+
+        this.timeExecutionTime = new Time(order.getTime().getStartTimeInterval(),
+                Utils.timeExecution((int) timeExecution, order.getTime().getStartTimeInterval()));
+        Utils.swapLocation(courier, order);
     }
 
     public Person getCourier() {
@@ -83,7 +97,9 @@ public class Purpose {
                 "courier=" + courier +
                 ", order=" + order +
                 ", startPoint=" + startPoint +
-                ", timeExecution=" + timeExecution + "минуты" +
+                ", endPoint=" + endPoint +
+                ", timeExecutionTime=" + timeExecutionTime +
+                ", timeExecution=" + timeExecution +
                 ", routeLength=" + routeLength +
                 ", income=" + income +
                 '}';

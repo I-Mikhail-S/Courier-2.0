@@ -1,10 +1,9 @@
 package org.example.courier;
 
-import org.example.ID.ID;
 import org.example.abstractPerson.Person;
 import org.example.point.Point;
 /**
- * Курьер на машине, наследник {@link Person}
+ * Курьер на машине,ограничения по {@link CourierCar#speed} не быстрее 16 м/с (60 км/ч),ограничения по {@link CourierCar#energy} не больше 10 кг, наследник {@link Person}
  */
 public class CourierCar extends Person {
     private int id;

@@ -36,18 +36,17 @@ class FirstPurposeTest {
         persons.add(new Person(2, "Ivan", 2.0, 3.0, new Point(3.0, 3.0)));
         persons.add(new Person(3, "Misha", 3.0, 4.0, new Point(4.0, 4.0)));
 
-        Schedule firstSchedule = FirstSchedule.firstSchedule(orders, persons);
-        firstSchedule.beautifulString();
-        System.out.println(persons.get(0).getSchedule().getAllPurpose());
-        System.out.println(firstSchedule);
 
 
-        List<Order> unusedOrder = new ArrayList<>();
+        Schedule schedule = FirstSchedule.firstSchedule(orders, persons);
+        schedule.beautifulString();
+
+/*        List<Order> unusedOrder = new ArrayList<>();
         unusedOrder.add(new Order(9, new Point(45.0, 4.0), new Point(100.0, 7.0), new Time("15:00", "17:00"), 13.0));
         unusedOrder.add(new Order(10, new Point(10.0, 6.0), new Point(99.0, 7.0), new Time("13:00", "15:00"), 14.0));
         unusedOrder.add(new Order(11, new Point(50.0, 7.0), new Point(72.0, 5.0), new Time("11:00", "12:00"), 15.0));
 
         Schedule secondSchedule = BasicAlgorithm.basicAlgorithm(persons, unusedOrder,firstSchedule);
-        firstSchedule.beautifulString();
+        firstSchedule.beautifulString();*/
     }
 }
