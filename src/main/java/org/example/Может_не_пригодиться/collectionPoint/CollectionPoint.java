@@ -1,4 +1,4 @@
-package org.example.collectionPoint;
+package org.example.Может_не_пригодиться.collectionPoint;
 
 import org.example.point.Point;
 

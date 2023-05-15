@@ -9,19 +9,22 @@ import javax.print.attribute.standard.SheetCollate;
 import java.util.Objects;
 
 /**
- * Фундаментальный класс person....
+ * Фундаментальный класс person,основные характерестики:
+ * id-уникальный номер,name - Имя курьера, Speed - скорость курьера(м\с),
+ * energy - максимальная грузоподъемность курьера(кг), location - местоположение курьера(м),
+ * schedule - рассписание курьера
  */
 public  class Person {
 
-    private int id;
-    private String name;
-    private double speed;
-    private double energy;
-    private Point location;
+    private int id;//уникальный номер
+    private String name;//Имя
+    private double speed;//Скорость
+    private double energy;//Грузоподъёмность
+    private Point location;//Местоположение
 
     private boolean setIsFree;
 
-    private Schedule schedule;
+    private Schedule schedule;//Рассписание
     public boolean getIsFree() {
         return setIsFree;
     }

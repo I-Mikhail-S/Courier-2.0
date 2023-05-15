@@ -2,14 +2,17 @@ package org.example.dividingTheQueue;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
+import org.example.distanceAndTime.SortedOrder;
 
+import java.text.ParseException;
 import java.util.*;
 
 class DividingTheQueue {
     private static int index = 0;
-    static public List<List<Order>> chopped(List<Order> list, List<Integer> L) {
-        List<List<Order>> parts = new ArrayList<List<Order>>();
-        list.sort(Order::compareTo);
+
+    static public List<List<Order>> chopped(List<Order> list, List<Integer> L) throws ParseException {
+
+        List<List<Order>> parts = new ArrayList<>();
         final int N = list.size();
         while(list.size()!=0) {
             parts.add(new ArrayList<Order>(list.subList(0, L.get(index))));
@@ -21,12 +24,10 @@ class DividingTheQueue {
         return parts;
     }
 
-    private static List<List<Order>> cutTheQueue(List<Order> orders, List<Person> persons) {
-        int remove = 0;
+    private static List<List<Order>> cutTheQueue(List<Order> orders, List<Person> persons) throws ParseException {
         List<List<Order>> listOrders = new ArrayList<>();
         List<Integer> result = sizeTheOrder(orders.size(), persons.size());
         listOrders = chopped(orders, result);
-
         return listOrders;
     }
 

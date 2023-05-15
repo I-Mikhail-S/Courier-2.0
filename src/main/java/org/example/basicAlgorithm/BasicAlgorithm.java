@@ -46,7 +46,7 @@ public class BasicAlgorithm {
         schedule.getAllPurpose().add(helpVariable + 1, maxIncome.getAllPurpose().get(maxIncome.getAllPurpose().size()));
         // делаем так, потому что мы заменили пурпосы в общем шедуле, но не добавили один, который вышел за рамки старого массива индивидуального шедула
 
-        return schedule; // не тестил, мб не работает
+        return schedule;
     }
 
 }

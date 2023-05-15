@@ -3,23 +3,27 @@ package org.example.dividingTheQueue;
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.distanceAndTime.DistanceCalculate;
+import org.example.distanceAndTime.SortedOrder;
 import org.example.distanceAndTime.TimeCalculate;
 import org.example.point.Point;
 import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
+import java.text.ParseException;
+import java.util.*;
 
 
 public class FirstSchedule {
     public static Schedule firstSchedule(List<Order> listOrder, List<Person> listPerson) {
         List<List<Order>> orders;
         List<Purpose> allDividingPurpose = new ArrayList<>();
+        SortedOrder sortedOrder = new SortedOrder();
         List<Integer> result = DividingTheQueue.sizeTheOrder(listOrder.size(), listPerson.size());
-        orders = DividingTheQueue.chopped(listOrder, result);
+        try {
+            orders = DividingTheQueue.chopped(sortedOrder.compare(listOrder), result);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
         int i =0;
         int f =0;
         int j = 0;
