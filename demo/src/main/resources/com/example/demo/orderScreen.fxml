@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.OrderScreen">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+    <children>
+      <Button layoutX="260.0" layoutY="70.0" fx:id="orderListButton" mnemonicParsing="false" text="Order List" />
+      <Button layoutX="69.0" layoutY="70.0" fx:id="newOrderButton" mnemonicParsing="false" text="New Order" />
+      <Button layoutX="65.0" layoutY="138.0" fx:id="newCourierButton" mnemonicParsing="false" text="New Courier" />
+      <Button layoutX="256.0" layoutY="138.0" fx:id="courierListButton" mnemonicParsing="false" text="Courier List" />
+      <Button layoutX="87.0" layoutY="267.0" fx:id="maxButton" mnemonicParsing="false" text="Max" />
+      <Button layoutX="77.0" layoutY="222.0" fx:id="OptimalButton" mnemonicParsing="false" prefHeight="18.0" prefWidth="59.0" text="Optimal" />
+      <Button layoutX="242.0" layoutY="223.0" fx:id="startApplicationButton" onAction="#switchToScene2_1" mnemonicParsing="false" prefHeight="69.0" prefWidth="105.0" text="Start Application" />
+   </children>
+</AnchorPane>
