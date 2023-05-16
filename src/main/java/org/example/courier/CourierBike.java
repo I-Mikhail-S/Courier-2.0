@@ -1,22 +1,25 @@
 package org.example.courier;
 
-import org.example.person.Person;
-
+import org.example.abstractPerson.Person;
+import org.example.point.Point;
+/**
+ * Курьер на мотоцикле,ограничения по {@link CourierBike#speed} не быстрее 6 м/с (20 км/ч),ограничения по {@link CourierBike#energy} не больше 5 кг, наследник {@link Person}
+ */
 public class CourierBike  extends Person{
     private int id;
     private String name;
     private double speed;
     private double energy;
     private boolean free;
+    private Point location;
 
-    //Объясните, пожалуйста, вы забыли про поле free или так надо?
 
     public CourierBike() {
         super();
     }
 
-    public CourierBike(int id, String name,double speed,double energy) {
-        super(id, name,speed,energy);
+    public CourierBike(int id, String name,double speed,double energy, Point location) {
+        super(id, name,speed,energy,location);
     }
 
     @Override
@@ -59,18 +62,28 @@ public class CourierBike  extends Person{
         this.energy = energy;
     }
 
+    @Override
+    public Point getLocation() {
+        return location;
+    }
+
+    @Override
+    public void setLocation(Point location) {
+        this.location = location;
+    }
+
     public void setIsFree(boolean free) {
         this. free = free;
     }
 
     @Override
     public String toString() {
-        return "CourierCar{" +
-                "id=" + getId() +
-                ", name='" + getName() + '\'' +
-                ", speed=" + getSpeed() +
-                ", energy=" + getEnergy() +
-                ", free=" + getIsFree() +
+        return "CourierBike{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", speed=" + speed +
+                ", energy=" + energy +
+                ", location=" + location +
                 '}';
     }
 }

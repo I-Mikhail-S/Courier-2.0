@@ -1,4 +1,5 @@
 package org.example.main;
+<<<<<<< HEAD
 
 
 import org.example.graph.Graph;
@@ -45,5 +46,10 @@ public class Main {
         graph.clean();
 
 
+=======
+public class Main {
+    public static void main(String[] args) {
+
+>>>>>>> 9d5e560baebae9acca67c2f0da7df2534ce0d205
     }
 }
