@@ -32,7 +32,7 @@ public class Purpose {
 
         this.timeFinish = order.getTimeFinish();
 
-        this.distance = order.getPointFinish().distancePoint(order.getPointStart());
+    //    this.distance = order.getPointFinish().distancePoint(order.getPointStart());
     }
 
     public double getDistance() {

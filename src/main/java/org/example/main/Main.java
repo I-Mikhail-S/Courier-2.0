@@ -1,12 +1,23 @@
 package org.example.main;
 
-import org.example.enumType.EnumCourier;
-import org.example.fabricPerson.BuilderPerson;
+
 import org.example.graph.Graph;
 import org.example.person.Person;
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+import org.example.ui.HelloApplication;
+
+
+import java.io.IOException;
 
 public class Main {
+
+
     public static void main(String[] args) throws Exception {
+
+
         Graph graph = new Graph();
 
         graph.addVertex('A');
@@ -32,5 +43,7 @@ public class Main {
         System.out.println("Элементы имеют кратчайшие пути из точки A: ");
         graph.path();
         graph.clean();
+
+
     }
 }
