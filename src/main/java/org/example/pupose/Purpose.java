@@ -100,8 +100,8 @@ public class Purpose {
                 ", endPoint=" + endPoint +
                 ", timeExecutionTime=" + timeExecutionTime +
                 ", timeExecution=" + timeExecution +
-                ", routeLength=" + routeLength +
-                ", income=" + income +
-                '}';
+                ", routeLength=" + Math.round(routeLength) +
+                ", income=" + Math.round(income) +
+                " рубль(ей)}";
     }
 }

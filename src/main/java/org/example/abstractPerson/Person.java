@@ -114,7 +114,6 @@ public  class Person {
                 ", energy=" + energy +
                 ", location=" + location +
                 ", setIsFree=" + setIsFree +
-                ", schedule=" + schedule +
                 '}';
     }
 }
