@@ -18,13 +18,15 @@ public  class Person {
 
     private int id;//уникальный номер
     private String name;//Имя
+    private String timeStartCourier;
+    private String timeEndCourier;
     private double speed;//Скорость
     private double energy;//Грузоподъёмность
     private Point location;//Местоположение
-
     private boolean setIsFree;
-
     private Schedule schedule;//Рассписание
+
+
     public boolean getIsFree() {
         return setIsFree;
     }
@@ -42,6 +44,22 @@ public  class Person {
         this.energy = energy;
         this.location = location;
         this.schedule = new Schedule();
+    }
+
+    public String getTimeStartCourier() {
+        return timeStartCourier;
+    }
+
+    public void setTimeStartCourier(String timeStartCourier) {
+        this.timeStartCourier = timeStartCourier;
+    }
+
+    public String getTimeEndCourier() {
+        return timeEndCourier;
+    }
+
+    public void setTimeEndCourier(String timeEndCourier) {
+        this.timeEndCourier = timeEndCourier;
     }
 
     public int getId() {
@@ -101,6 +119,8 @@ public  class Person {
                 ", speed=" + speed +
                 ", energy=" + energy +
                 ", location=" + location +
+                ", setIsFree=" + setIsFree +
+                ", schedule=" + schedule +
                 '}';
     }
 }

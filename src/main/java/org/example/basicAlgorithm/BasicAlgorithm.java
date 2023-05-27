@@ -2,29 +2,71 @@ package org.example.basicAlgorithm;
 
 import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
-import org.example.distanceAndTime.DistanceCalculate;
-import org.example.distanceAndTime.TimeCalculate;
 import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
+import org.example.time.Time;
+import org.example.utils.Utils;
 
-import java.util.List;
+import java.util.*;
+
 
 public class BasicAlgorithm {
+    private static void updatePurpose(Purpose purpose){
+        purpose.getCourier().setTimeEndCourier(purpose.getTimeExecutionTime().getEndTimeInterval());
+        purpose.getOrder().getTime().setStartTimeInterval(purpose.getCourier().getTimeEndCourier());
+        purpose.getOrder().getTime().setEndTimeInterval(purpose.getCourier().getTimeEndCourier());
+    }
+    private static ArrayList<Integer> list = new ArrayList<>();
+    public static ArrayList<Integer> random(int size){
+        for (int i=0; i<size; i++) list.add(i);
+        Collections.shuffle(list);
+        return  list;
+    }
 
-    public static Schedule basicAlgorithm (List<Person> allPerson, List<Order> unUsedOrder, Schedule schedule) {
+    private static Integer numberRandom () {
+        int value = 0;
+        value = list.get(0);
+        list.remove(0);
+        return value;
+    }
 
-        for (Person helpPerson : allPerson) {
-            for (Order helpOrder : unUsedOrder) {
-                Purpose ideaPurpose = new Purpose(helpPerson, helpOrder);
-                if (helpOrder.getTime().getStartTimeInterval().equals(helpOrder.getTime().getEndTimeInterval())){
+    public static Schedule basicAlgorithm (List<Person> personList, List<Order> orderList) {
 
-                }
-
-            }
+        if (personList == null && orderList == null) {
+            throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
 
-
-        return null;
+        List<Schedule> ideaScheduleList = new ArrayList<>();
+        while (ideaScheduleList.size() < 10000) {
+            List<Integer> prev = new ArrayList<>(random(orderList.size()));
+            List<Order> unUsedOrder = new ArrayList<>(orderList);
+            Schedule ideaSchedule = new Schedule();
+            for (int k = 0,i = 0; list.size() > 0 ; k++,i++) {
+                if (k == personList.size()) k = 0;
+                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(0));
+                updatePurpose(ideaPurpose);
+                ideaSchedule.addPurpose(ideaPurpose);
+                unUsedOrder.remove(0);
+                list.remove(0);
+            }
+            list.clear();
+            boolean flag = true;
+            for (Schedule helpSchedule : ideaScheduleList)
+                if (helpSchedule == ideaSchedule) {
+                    flag = false;
+                    break;
+                }
+            if (flag) ideaScheduleList.add(ideaSchedule);
+        }
+        int minIndex = 0;
+        Schedule minLengthSchedule = ideaScheduleList.get(0);
+        for (int i = 1; i < ideaScheduleList.size(); i++) {
+            if (minLengthSchedule.getTotalLength() > ideaScheduleList.get(i).getTotalLength()) {
+                minIndex = i;
+            }
+        }
+        Schedule schedule = new Schedule(ideaScheduleList.get(minIndex).getAllPurpose());
+        return schedule;
     }
 
 }
