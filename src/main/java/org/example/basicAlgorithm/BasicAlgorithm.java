@@ -9,6 +9,7 @@ import java.util.*;
 
 
 public class BasicAlgorithm {
+    private static ArrayList<Integer> list = new ArrayList<>();
     private static ArrayList<Integer> random(int size){
         ArrayList<Integer> list = new ArrayList<Integer>();
         for (int i=1; i<size; i++) list.add(i);
@@ -16,7 +17,14 @@ public class BasicAlgorithm {
         return  list;
     }
 
-
+    private static Integer numberRandom () {
+        int value = 0;
+        while (list.isEmpty()) {
+            value = list.get(0);
+            list.remove(0);
+        }
+        return value;
+    }
 
     public static Schedule basicAlgorithm (List<Person> personList, List<Order> orderList) {
 
@@ -28,12 +36,13 @@ public class BasicAlgorithm {
         while (ideaScheduleList.size() < 1000) {
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
+            random(orderList.size());
 
-            for (int k = 0,i = 0; unUsedOrder.size() != 0; k++,i++) {
+            for (int k = 0; unUsedOrder.size() != 0; k++) {
                 if (k == personList.size()) k = 0;
-                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(random(orderList.size()).get(i)));
+                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(numberRandom()));
                 ideaSchedule.addPurpose(ideaPurpose);
-                unUsedOrder.remove(unUsedOrder.get(0));
+                unUsedOrder.remove(ideaPurpose.getOrder());
             }
             boolean flag = true;
             for (Schedule helpSchedule : ideaScheduleList)

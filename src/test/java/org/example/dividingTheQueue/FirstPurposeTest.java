@@ -4,17 +4,14 @@ import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.basicAlgorithm.BasicAlgorithm;
 import org.example.point.Point;
-import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
 import org.example.time.Time;
 import org.junit.jupiter.api.Test;
 
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
 
 class FirstPurposeTest {
 
