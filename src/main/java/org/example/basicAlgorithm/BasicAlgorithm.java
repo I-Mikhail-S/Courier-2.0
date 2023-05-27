@@ -13,13 +13,15 @@ import java.util.Objects;
 
 public class BasicAlgorithm {
 
+
+
     public static Schedule basicAlgorithm (List<Person> personList, List<Order> orderList) {
         if (personList == null && orderList == null) {
             throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
 
         List<Schedule> ideaScheduleList = new ArrayList<>();
-        while (ideaScheduleList.size() < 100) {
+        while (ideaScheduleList.size() < 1000) {
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
 

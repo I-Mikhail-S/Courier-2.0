@@ -40,6 +40,7 @@ public class Purpose {
 
         this.timeExecutionTime = new Time(order.getTime().getStartTimeInterval(),
                 Utils.timeExecution((int) timeExecution, order.getTime().getStartTimeInterval()));
+
         Utils.swapLocation(courier, order);
     }
 
