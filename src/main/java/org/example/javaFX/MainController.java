@@ -25,6 +25,8 @@ public class MainController {
 
     public ListView <String> OrderList;
     public ListView ResultList;
+    public TextField courierTimeStart;
+    public TextField courierTimeEnd;
 
     List<Order> orders = new ArrayList<>();
     List<Person> persons = new ArrayList();
@@ -93,9 +95,12 @@ public class MainController {
         for (Purpose helpPurpose : schedule.getAllPurpose()) {
             ResultList.getItems().add(helpPurpose);
         }
-    }
+        Math.round(getIncomeSchedule())
+                + " рубля(ей).");
+        System.out.println("Общая пройденная дистанция: " + Math.round(getTotalLength())
+                + " метра(ов).");
 
-    public void StressModeToggle(ActionEvent event) {
+
     }
 
     public void LightOrder(ActionEvent event) {
