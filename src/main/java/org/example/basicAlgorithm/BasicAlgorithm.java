@@ -4,7 +4,6 @@ import org.example.abstractOrder.Order;
 import org.example.abstractPerson.Person;
 import org.example.pupose.Purpose;
 import org.example.schedule.Schedule;
-import org.example.time.Time;
 import org.example.utils.Utils;
 
 import java.util.*;
@@ -12,8 +11,8 @@ import java.util.*;
 
 public class BasicAlgorithm {
     private static void updatePurpose(Purpose purpose){
-        purpose.getCourier().setTimeStartCourier(Utils.timeExecution((int) purpose.getTimeExecution(),purpose.getCourier().getTimeStartCourier()));
-        purpose.getOrder().getTime().setEndTimeInterval( purpose.getCourier().getTimeStartCourier());
+            purpose.getCourier().setTimeStartCourier(Utils.timeExecution((int) purpose.getTimeExecution(), purpose.getCourier().getTimeStartCourier()));
+            purpose.getOrder().getTime().setEndTimeInterval(purpose.getCourier().getTimeStartCourier());
     }
     private static void cleanPurpose(Schedule ideaSchedule){
         for (int i = 0; i < ideaSchedule.getAllPurpose().size(); i++) {
@@ -38,18 +37,18 @@ public class BasicAlgorithm {
     }
 
     public static Schedule basicAlgorithm (List<Person> personList, List<Order> orderList) {
-
         if (personList == null && orderList == null) {
             throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
         List<Schedule> ideaScheduleList = new ArrayList<>();
-        while (ideaScheduleList.size() < 100) { // при глубине просчёта 100000 считает в районе 1 минуты.
-
+        while (ideaScheduleList.size() < 100000) { // при глубине просчёта 100000 считает в районе 1 минуты.
+            random(orderList.size());
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
             for (int k = 0; list.size() > 0 ; k++) {
                 if (k == personList.size()) k = 0;
                 Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(numberRandomO()));
+
                 updatePurpose(ideaPurpose);
                 ideaSchedule.addPurpose(ideaPurpose);
                 personList.get(k).getSchedule().addPurpose(ideaPurpose);

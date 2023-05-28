@@ -12,7 +12,9 @@ public class Utils {
 
     public static String timeExecution (int timeStartInterval, String time) {
         if (timeStartInterval == 0) {
-            return time;
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+            LocalTime lt = LocalTime.parse(time);
+            return formatter.format(lt.plusMinutes(1));
         }
         if (timeStartInterval < 0) {
             throw new RuntimeException("Неверное время!");

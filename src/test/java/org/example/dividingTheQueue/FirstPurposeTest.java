@@ -19,20 +19,20 @@ class FirstPurposeTest {
     void firstPurpose() throws ParseException {
         List<Order> orders = new ArrayList<>();
 
-        orders.add(new Order(1, new Point(1.0, 2.0), new Point(99.0, 78.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(2, new Point(9.0, 2.0), new Point(3.0, 2.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(3, new Point(1.0, 7.0), new Point(3.0, 6.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(4, new Point(9.0, 7.0), new Point(12.0, 18.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(5, new Point(7.0, 1.0), new Point(1.0, 7.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(6, new Point(1.0, 4.0), new Point(9.0, 4.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(7, new Point(2.0, 6.0), new Point(4.0, 7.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(8, new Point(7.0, 7.0), new Point(3.0, 7.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(9, new Point(45.0, 4.0), new Point(100.0, 7.0), new Time("08:00", "12:00"), 10.0));
-        orders.add(new Order(10, new Point(10.0, 6.0), new Point(99.0, 7.0), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(1, new Point(14.0, 14.0), new Point(14.00, 14.00), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(2, new Point(18.0, 14.0), new Point(14.00, 14.05), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(3, new Point(14.0, 14.0), new Point(14.00,14.00),new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(4, new Point(14.0, 14.0), new Point(14.00, 14.00), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(5, new Point(14.0, 14.3), new Point(14.00,14.00),new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(6, new Point(14.0, 14.0), new Point(14.00,14.00), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(7, new Point(14.0, 14.0), new Point(14.00, 14.00), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(8, new Point(14.0, 14.0), new Point(14.00,14.00),new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(9, new Point(14.0, 14.0), new Point(14.00,14.00), new Time("08:00", "12:00"), 10.0));
+        orders.add(new Order(10, new Point(14.00,14.00), new Point(14.00,14.00), new Time("08:00", "12:00"), 10.0));
 
         List<Person> persons = new ArrayList();
-        persons.add(new Person(1, "Stepan", 1.0, 2.0,"08:00","12:00",new Point(2.0, 2.0)));
-        persons.add(new Person(2, "Ivan", 2.0, 3.0,"08:00", "12:00",new Point(3.0, 3.0)));
+        persons.add(new Person(1, "Stepan", 2.0, 10.0,"08:00","12:00",new Point(2.0, 2.0)));
+        persons.add(new Person(2, "Ivan", 1.0, 5.0,"08:00", "12:00",new Point(3.0, 3.0)));
         persons.add(new Person(3, "Misha", 3.0, 4.0,"08:00", "12:00",new Point(4.0, 4.0)));
 
         Schedule schedule = BasicAlgorithm.basicAlgorithm(persons, orders);
