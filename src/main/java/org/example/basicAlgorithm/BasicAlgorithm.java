@@ -20,12 +20,14 @@ public class BasicAlgorithm {
     public static ArrayList<Integer> random(int size){
         for (int i=0; i<size; i++) list.add(i);
         Collections.shuffle(list);
-        return  list;
+        return list;
     }
 
     private static Integer numberRandom () {
-        int value = 0;
-        value = list.get(0);
+        if (list.isEmpty()) {
+            throw new RuntimeException("Рандомные числа не сгенерированы!");
+        }
+        int value = list.get(0);;
         list.remove(0);
         return value;
     }
@@ -37,19 +39,18 @@ public class BasicAlgorithm {
         }
 
         List<Schedule> ideaScheduleList = new ArrayList<>();
-        while (ideaScheduleList.size() < 10000) {
-            List<Integer> prev = new ArrayList<>(random(orderList.size()));
+        while (ideaScheduleList.size() < 100000) { // при глубине просчёта 100000 считает в районе 1 минуты.
+            random(orderList.size());
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
             for (int k = 0,i = 0; list.size() > 0 ; k++,i++) {
                 if (k == personList.size()) k = 0;
-                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(0));
+                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(numberRandom()));
                 updatePurpose(ideaPurpose);
                 ideaSchedule.addPurpose(ideaPurpose);
-                unUsedOrder.remove(0);
-                list.remove(0);
+                personList.get(k).getSchedule().addPurpose(ideaPurpose);
+                //unUsedOrder.remove(ideaPurpose.getOrder());
             }
-            list.clear();
             boolean flag = true;
             for (Schedule helpSchedule : ideaScheduleList)
                 if (helpSchedule == ideaSchedule) {

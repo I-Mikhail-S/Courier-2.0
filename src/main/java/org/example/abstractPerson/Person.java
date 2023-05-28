@@ -119,8 +119,6 @@ public  class Person {
                 ", speed=" + speed +
                 ", energy=" + energy +
                 ", location=" + location +
-                ", setIsFree=" + setIsFree +
-                ", schedule=" + schedule +
                 '}';
     }
 }
