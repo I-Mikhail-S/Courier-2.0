@@ -1,9 +1,11 @@
 module org.example.javaFX {
-    requires javafx.controls;
-    requires javafx.fxml;
+
     requires java.sql;
-    requires maven.plugin.api;
+    requires javafx.graphics;
+    requires javafx.fxml;
+    requires javafx.controls;
     requires javafaker;
+    requires maven.plugin.api;
 
 
     opens org.example.javaFX;

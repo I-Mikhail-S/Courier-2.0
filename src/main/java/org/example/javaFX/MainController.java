@@ -16,7 +16,7 @@ import java.util.List;
 
 public class MainController {
     @FXML
-    public ProgressBar Progress;
+
     public Button BackButton;
     public Button StartButton;
     public ToggleButton StressToggle;
