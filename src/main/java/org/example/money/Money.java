@@ -19,7 +19,7 @@ public class Money {
                 order.getPointFinish().getX(), order.getPointFinish().getY());
 
         // расстояние * вес * "денежный коэфициент (с потолка)".
-        sum = (firstDistance * 1.1) + ((secondDistance * 1.5) * (order.getWeight() * 0.75));
+        sum = (firstDistance * 1.1) + ((secondDistance * 1.5) * (order.getWeight() * 0.75)) + 200;
 
         return sum;
     }
