@@ -18,8 +18,8 @@ public class CourierBike  extends Person{
         super();
     }
 
-    public CourierBike(int id, String name,double speed,double energy, Point location) {
-        super(id, name,speed,energy,location);
+    public CourierBike(int id, String name,double speed,double energy,String startTimeInterval,String timeEndCourier, Point location) {
+        super(id, name,speed,energy,startTimeInterval,timeEndCourier,location);
     }
 
     @Override

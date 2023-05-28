@@ -11,14 +11,8 @@ class PointTest {
         assertEquals(Point.distanceFourPoint(3,4,7,4),4);
     }
     @Test
-    void distancePointValid() {
-        assertEquals(Point.distanceFourPoint(3,4,7,4),4);
-    }
-    @Test
-    void testDistancePoint() {
+    void distancePointNoValid() {
+        assertEquals(Point.distanceFourPoint(0,0,0,0),0);
     }
 
-    @Test
-    void distanceFourPoint() {
-    }
 }

@@ -18,6 +18,8 @@ public  class Person {
 
     private int id;//уникальный номер
     private String name;//Имя
+    private String timeStartCourier;
+    private String timeEndCourier;
     private double speed;//Скорость
     private double energy;//Грузоподъёмность
     private Point location;//Местоположение
@@ -35,13 +37,31 @@ public  class Person {
 
     public Person() {}
 
-    public Person(int id, String name, double speed, double energy, Point location) {
+    public Person(int id, String name, double speed, double energy,String timeStartCourier,String timeEndCourier, Point location) {
         this.id = id;
         this.name = name;
         this.speed = speed;
         this.energy = energy;
         this.location = location;
+        this.timeStartCourier = timeStartCourier;
+        this.timeEndCourier = timeEndCourier;
         this.schedule = new Schedule();
+    }
+
+    public String getTimeStartCourier() {
+        return timeStartCourier;
+    }
+
+    public void setTimeStartCourier(String timeStartCourier) {
+        this.timeStartCourier = timeStartCourier;
+    }
+
+    public String getTimeEndCourier() {
+        return timeEndCourier;
+    }
+
+    public void setTimeEndCourier(String timeEndCourier) {
+        this.timeEndCourier = timeEndCourier;
     }
 
     public int getId() {
@@ -92,18 +112,6 @@ public  class Person {
         this.schedule = schedule;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Person person = (Person) o;
-        return id == person.id && Double.compare(person.speed, speed) == 0 && Objects.equals(location, person.location);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, speed, location);
-    }
 
     @Override
     public String toString() {
@@ -113,9 +121,8 @@ public  class Person {
                 ", speed=" + speed +
                 ", energy=" + energy +
                 ", location=" + location +
-                ", setIsFree=" + setIsFree +
-                ", schedule=" + schedule +
-                '}';
+                ", setIsFree=" + setIsFree;
+
     }
 
     public String PersonToString(){

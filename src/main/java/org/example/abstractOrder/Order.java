@@ -23,7 +23,6 @@ public class Order {
     private int id;//Уникальный номер заказа
     private Point pointStart;//Точка сбора
     private Point pointFinish;//Точка доставки
-
     private Time time;//Время
     private double weight;//Вес
     public boolean flag;

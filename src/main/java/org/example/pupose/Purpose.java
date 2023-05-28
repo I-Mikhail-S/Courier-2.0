@@ -23,6 +23,7 @@ public class Purpose {
     private Person courier;
     private Order order;
     private Point startPoint;
+    private boolean isDone;
     private Point endPoint;
     private Time timeExecutionTime;
     private long timeExecution; //время выполнения
@@ -30,6 +31,7 @@ public class Purpose {
     private double income; //доход (не прибыль)
 
     public Purpose(Person courier, Order order) {
+        this.isDone = true;
         this.courier = courier;
         this.order = order;
         this.startPoint = courier.getLocation();
@@ -37,10 +39,24 @@ public class Purpose {
         this.routeLength = DistanceCalculate.getDistance(courier, order);
         this.timeExecution = TimeCalculate.getTime(courier, order);
         this.income = Money.moneySum(courier, order);
-
         this.timeExecutionTime = new Time(order.getTime().getStartTimeInterval(),
-                Utils.timeExecution((int) timeExecution, order.getTime().getStartTimeInterval()));
+                Utils.timeExecution((int) timeExecution, courier.getTimeStartCourier()));
         Utils.swapLocation(courier, order);
+    }
+    public boolean isDone() {
+        return isDone;
+    }
+
+    public void setDone(boolean done) {
+        isDone = done;
+    }
+
+    public Time getTimeExecutionTime() {
+        return timeExecutionTime;
+    }
+
+    public void setTimeExecutionTime(Time timeExecutionTime) {
+        this.timeExecutionTime = timeExecutionTime;
     }
 
     public Person getCourier() {
@@ -96,12 +112,10 @@ public class Purpose {
         return "Purpose{" +
                 "courier=" + courier +
                 ", order=" + order +
-                ", startPoint=" + startPoint +
-                ", endPoint=" + endPoint +
-                ", timeExecutionTime=" + timeExecutionTime +
-                ", timeExecution=" + timeExecution +
-                ", routeLength=" + routeLength +
-                ", income=" + income +
-                '}';
+                ", timeExecutionTime=" + timeExecutionTime.getEndTimeInterval() +
+                ", timeExecutionTime=" + timeExecution +
+                ", routeLength=" + Math.round(routeLength) +
+                ", income=" + Math.round(income) +
+                " рубль(ей)}";
     }
 }

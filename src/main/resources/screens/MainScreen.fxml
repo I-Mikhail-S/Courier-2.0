@@ -44,8 +44,8 @@
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="500.0" prefWidth="972.0" style="-fx-background-color: #79305a;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.javaFX.MainController">
-  <children>
-    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="500.0" prefWidth="970.0" style="-fx-background-color: #2c2c2c;" VBox.vgrow="ALWAYS">
+   <children>
+      <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="500.0" prefWidth="970.0" style="-fx-background-color: #2c2c2c;" VBox.vgrow="ALWAYS">
          <children>
             <AnchorPane layoutX="225.0" layoutY="255.0" prefHeight="200.0" prefWidth="545.0" style="-fx-background-color: #242424;" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="15.0">
                <children>
@@ -70,22 +70,38 @@
                      </font>
                   </SplitMenuButton>
                   <ListView fx:id="OrderList" layoutX="306.0" layoutY="8.0" prefHeight="130.0" prefWidth="201.0" style="-fx-background-color: #2c2c2c;" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="10.0" />
+<<<<<<< HEAD
                   <TextField layoutX="218.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xStartOrder" />
+=======
+                  <TextField layoutX="204.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xStartOrder" />
+>>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
                   <Label layoutX="252.0" layoutY="80.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
+<<<<<<< HEAD
                   <TextField fx:id="yStartOrder" layoutX="277.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
+=======
+                  <TextField fx:id="yStartOrder" layoutX="268.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
+>>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
                   <Label layoutX="180.0" layoutY="150.0" style="-fx-background-color: #242424;" text="x" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
+<<<<<<< HEAD
                   <TextField layoutX="218.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xEndOrder" />
+=======
+                  <TextField layoutX="204.0" layoutY="151.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xEndOrder" />
+>>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
                   <Label layoutX="254.0" layoutY="150.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
+<<<<<<< HEAD
                   <TextField fx:id="yEndOrder" layoutX="277.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
+=======
+                  <TextField fx:id="yEndOrder" layoutX="268.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
+>>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
                   <TextField fx:id="weightOrder" layoutX="88.0" layoutY="115.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
 
                   <Label layoutX="19.0" layoutY="115.0" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #242424;" text="Weight" textAlignment="CENTER" textFill="#9f2b68">
@@ -146,8 +162,13 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
+<<<<<<< HEAD
                   <TextField layoutX="216.0" layoutY="152.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xCourier" />
                   <TextField fx:id="yCourier" layoutX="275.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e;-fx-text-fill: #9f2b68;" />
+=======
+                  <TextField layoutX="204.0" layoutY="152.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xCourier" />
+                  <TextField fx:id="yCourier" layoutX="268.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e;-fx-text-fill: #9f2b68;" />
+>>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
                   <Label layoutX="250.0" layoutY="150.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
@@ -229,6 +250,6 @@
                </opaqueInsets>
             </AnchorPane>
          </children>
-    </AnchorPane>
-  </children>
+      </AnchorPane>
+   </children>
 </VBox>
