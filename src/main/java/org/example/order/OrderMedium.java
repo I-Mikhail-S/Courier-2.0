@@ -74,8 +74,8 @@ public class OrderMedium extends Order {
 
     @Override
     public String toString() {
-        return "OrderHard{" +
-                "id=" + id +
+        return "id=" + id +
+                ", Type=Medium" +
                 ", pointStart=" + pointStart +
                 ", pointFinish=" + pointFinish +
                 ", time=" + time +

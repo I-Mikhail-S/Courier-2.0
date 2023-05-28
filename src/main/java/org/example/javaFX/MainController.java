@@ -23,9 +23,7 @@ import java.util.List;
 public class MainController {
     @FXML
 
-    public Button BackButton;
     public Button StartButton;
-    public ToggleButton StressToggle;
 
     public ListView <String> CourierList;
 
@@ -33,11 +31,12 @@ public class MainController {
     public ListView ResultList;
     public TextField courierTimeStart;
     public TextField courierTimeEnd;
-
+    public SplitMenuButton CourierType;
+    public SplitMenuButton OrderType;
+    public Label distanceField;
+    public Label outcomeField;
     List<Order> orders = new ArrayList<>();
     List<Person> persons = new ArrayList();
-    public TextField courierTimeStart;
-    public TextField courierTimeEnd;
     public TextField yCourier;
     public TextField xCourier;
     public TextField energyCourier;
@@ -63,18 +62,34 @@ public class MainController {
 
         Point start = new Point (xStart, yStart);
         Point end = new Point(xEnd,yEnd);
-
         String time1 = startTimeOrder.getText();
         String time2 = endTimeOrder.getText();
         Time time = new Time(time1,time2);
-
         double weight = Double.parseDouble(weightOrder.getText());
 
+        switch (CourierType.getText()) {
+            case "Light":
+                Order orderLight = new OrderLight(id, start, end, time, weight);
+                orders.add(orderLight);
+                OrderList.getItems().add(orderLight.toString());
+                return;
+            case "Medium":
+                Order orderMedium = new OrderMedium(id, start, end, time,weight);
+                orders.add(orderMedium);
+                OrderList.getItems().add(orderMedium.toString());
+                return;
+            case "Hard":
+                Order orderHard = new OrderHard(id, start, end, time,weight);
+                orders.add(orderHard);
+                OrderList.getItems().add(orderHard.toString());
+                return;
+            case "Type":
+                Order order = new Order(id, start, end, time,weight);
+                orders.add(order);
+                OrderList.getItems().add(order.toString());
+                return;
+        }
 
-        Order order = new Order(id, start, end, time,weight);
-
-        orders.add(order);
-        OrderList.getItems().add(order.OrderToString());
     }
 
     public void AddCourier(ActionEvent event) {
@@ -86,9 +101,31 @@ public class MainController {
         double y = Double.parseDouble(yCourier.getText());
         double energy = Double.parseDouble(energyCourier.getText());
         Point point = new Point(x,y);
-        Person courier = new Person(id, name, speed, energy,courierTimeStart.getText(),courierTimeEnd.getText(), point);
-        persons.add(courier);
-        CourierList.getItems().add(courier.PersonToString());
+        String time1 = courierTimeStart.getText();
+        String time2 = courierTimeEnd.getText();
+
+        switch (CourierType.getText()){
+            case "On foot":
+                Person courierPeople = new CourierPeople(id, name, speed, energy,time1,time2, point);
+                persons.add(courierPeople);
+                CourierList.getItems().add(courierPeople.toString());
+                return;
+            case "By bike":
+                Person courierBike = new CourierBike(id, name, speed, energy,time1,time2, point);
+                persons.add(courierBike);
+                CourierList.getItems().add(courierBike.toString());
+                return;
+            case "By car":
+                Person courierCar = new CourierCar(id, name, speed, energy,time1,time2, point);
+                persons.add(courierCar);
+                CourierList.getItems().add(courierCar.toString());
+                return;
+            case "Type":
+                Person courier = new Person(id, name, speed, energy, time1,time2, point);
+                persons.add(courier);
+                CourierList.getItems().add(courier.toString());
+                return;
+        }
     }
 
     public void StartApplication(ActionEvent event) {
@@ -97,121 +134,40 @@ public class MainController {
         for (Purpose helpPurpose : schedule.getAllPurpose()) {
             ResultList.getItems().add(helpPurpose);
         }
-        Math.round(getIncomeSchedule())
-                + " рубля(ей).");
-        System.out.println("Общая пройденная дистанция: " + Math.round(getTotalLength())
-                + " метра(ов).");
+
+        double outcome = Math.round(schedule.getIncomeSchedule());
+        double distance = Math.round(schedule.getTotalLength());
+
+        outcomeField.setText(Double.toString(outcome) + " rub");
+        distanceField.setText(Double.toString(distance) + " m");
 
 
-<<<<<<< HEAD
-=======
-    public void StressModeToggle(ActionEvent event) {
-
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
     }
 
     public void LightOrder(ActionEvent event) throws Exception {
-        int id = 1 + OrderList.getItems().size();
-        double xStart = Double.parseDouble(xStartOrder.getText());
-        double yStart = Double.parseDouble(yStartOrder.getText());
-
-        double yEnd = Double.parseDouble(yEndOrder.getText());
-        double xEnd = Double.parseDouble(xEndOrder.getText());
-
-        Point start = new Point (xStart, yStart);
-        Point end = new Point(xEnd,yEnd);
-
-        String time1 = startTimeOrder.getText();
-        String time2 = endTimeOrder.getText();
-        Time time = new Time(time1,time2);
-
-        double weight = Double.parseDouble(weightOrder.getText());
-        Order order = new OrderLight(id, start, end, time,weight);
-        orders.add(order);
-        OrderList.getItems().add(order.OrderToString());
+        OrderType.setText("Light");
     }
 
     public void MediumOrder(ActionEvent event) throws Exception {
-        int id = 1 + OrderList.getItems().size();
-        double xStart = Double.parseDouble(xStartOrder.getText());
-        double yStart = Double.parseDouble(yStartOrder.getText());
 
-        double yEnd = Double.parseDouble(yEndOrder.getText());
-        double xEnd = Double.parseDouble(xEndOrder.getText());
-
-        Point start = new Point (xStart, yStart);
-        Point end = new Point(xEnd,yEnd);
-
-        String time1 = startTimeOrder.getText();
-        String time2 = endTimeOrder.getText();
-        Time time = new Time(time1,time2);
-
-        double weight = Double.parseDouble(weightOrder.getText());
-
-        Order order = new OrderMedium(id, start, end, time,weight);
-        orders.add(order);
-        OrderList.getItems().add(order.OrderToString());
+        OrderType.setText("Medium");
     }
 
     public void HardOrder(ActionEvent event) throws Exception {
-        int id = 1 + OrderList.getItems().size();
-        double xStart = Double.parseDouble(xStartOrder.getText());
-        double yStart = Double.parseDouble(yStartOrder.getText());
+        OrderType.setText("Hard");
 
-        double yEnd = Double.parseDouble(yEndOrder.getText());
-        double xEnd = Double.parseDouble(xEndOrder.getText());
-
-        Point start = new Point (xStart, yStart);
-        Point end = new Point(xEnd,yEnd);
-
-        String time1 = startTimeOrder.getText();
-        String time2 = endTimeOrder.getText();
-        Time time = new Time(time1,time2);
-
-        double weight = Double.parseDouble(weightOrder.getText());
-
-        Order order = new OrderHard(id, start, end, time,weight);
-        orders.add(order);
-        OrderList.getItems().add(order.OrderToString());
     }
 
     public void BikeCourier(ActionEvent event) {
-        int id = 1 + CourierList.getItems().size();
-        String name = nameCourier.getText();
-        double speed = Double.parseDouble(speedCourier.getText());
-        double x = Double.parseDouble(xCourier.getText());
-        double y = Double.parseDouble(yCourier.getText());
-        double energy = Double.parseDouble(energyCourier.getText());
-        Point point = new Point(x,y);
-        Person courier = new CourierBike(id, name, speed, energy,courierTimeStart.getText(),courierTimeEnd.getText(), point);
-        persons.add(courier);
-        CourierList.getItems().add(courier.PersonToString());
+        CourierType.setText("By bike");
     }
 
     public void CarCourier(ActionEvent event) {
-        int id = 1 + CourierList.getItems().size();
-        String name = nameCourier.getText();
-        double speed = Double.parseDouble(speedCourier.getText());
-        double x = Double.parseDouble(xCourier.getText());
-        double y = Double.parseDouble(yCourier.getText());
-        double energy = Double.parseDouble(energyCourier.getText());
-        Point point = new Point(x,y);
-        Person courier = new CourierCar(id, name, speed, energy,courierTimeStart.getText(),courierTimeEnd.getText(), point);
-        persons.add(courier);
-        CourierList.getItems().add(courier.PersonToString());
+        CourierType.setText("By car");
     }
 
     public void PeopleCourier(ActionEvent event) {
-        int id = 1 + CourierList.getItems().size();
-        String name = nameCourier.getText();
-        double speed = Double.parseDouble(speedCourier.getText());
-        double x = Double.parseDouble(xCourier.getText());
-        double y = Double.parseDouble(yCourier.getText());
-        double energy = Double.parseDouble(energyCourier.getText());
-        Point point = new Point(x,y);
-        Person courier = new CourierPeople(id, name, speed, energy,courierTimeStart.getText(),courierTimeEnd.getText(), point);
-        persons.add(courier);
-        CourierList.getItems().add(courier.PersonToString());
+        CourierType.setText("On foot");
     }
 
     public void ClearCourierList(ActionEvent event) {

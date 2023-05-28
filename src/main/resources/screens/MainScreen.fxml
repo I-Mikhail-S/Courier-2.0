@@ -59,7 +59,7 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-                  <SplitMenuButton layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #1e1e1e;" text="Type" textFill="#9f2b68" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="148.0">
+                  <SplitMenuButton fx:id="OrderType" layoutX="20.0" layoutY="150.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #1e1e1e;" text="Type" textFill="#9f2b68" AnchorPane.leftAnchor="19.0" AnchorPane.topAnchor="148.0">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#LightOrder" text="Light" />
                         <MenuItem mnemonicParsing="false" onAction="#MediumOrder" text="Medium" />
@@ -70,38 +70,32 @@
                      </font>
                   </SplitMenuButton>
                   <ListView fx:id="OrderList" layoutX="306.0" layoutY="8.0" prefHeight="130.0" prefWidth="201.0" style="-fx-background-color: #2c2c2c;" AnchorPane.bottomAnchor="60.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="10.0" />
-<<<<<<< HEAD
+
                   <TextField layoutX="218.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xStartOrder" />
-=======
-                  <TextField layoutX="204.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xStartOrder" />
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
+
+
                   <Label layoutX="252.0" layoutY="80.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-<<<<<<< HEAD
-                  <TextField fx:id="yStartOrder" layoutX="277.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
-=======
+
+
                   <TextField fx:id="yStartOrder" layoutX="268.0" layoutY="80.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
+
                   <Label layoutX="180.0" layoutY="150.0" style="-fx-background-color: #242424;" text="x" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-<<<<<<< HEAD
+
                   <TextField layoutX="218.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xEndOrder" />
-=======
-                  <TextField layoutX="204.0" layoutY="151.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xEndOrder" />
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
+
                   <Label layoutX="254.0" layoutY="150.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-<<<<<<< HEAD
+
                   <TextField fx:id="yEndOrder" layoutX="277.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
-=======
-                  <TextField fx:id="yEndOrder" layoutX="268.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
+
                   <TextField fx:id="weightOrder" layoutX="88.0" layoutY="115.0" prefHeight="25.0" prefWidth="80.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" />
 
                   <Label layoutX="19.0" layoutY="115.0" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #242424;" text="Weight" textAlignment="CENTER" textFill="#9f2b68">
@@ -147,7 +141,7 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-                  <SplitMenuButton layoutX="17.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #1e1e1e;" text="Type" textFill="#9f2b68" AnchorPane.topAnchor="152.0">
+                  <SplitMenuButton fx:id="CourierType"  layoutX="17.0" layoutY="152.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="138.0" style="-fx-background-color: #1e1e1e;" text="Type" textFill="#9f2b68" AnchorPane.topAnchor="152.0">
                      <items>
                         <MenuItem mnemonicParsing="false" onAction="#BikeCourier" text="Bike" />
                         <MenuItem mnemonicParsing="false" onAction="#CarCourier" text="Car" />
@@ -162,13 +156,10 @@
                      <font>
                         <Font name="System Bold" size="16.0" />
                      </font></Label>
-<<<<<<< HEAD
+
                   <TextField layoutX="216.0" layoutY="152.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xCourier" />
                   <TextField fx:id="yCourier" layoutX="275.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e;-fx-text-fill: #9f2b68;" />
-=======
-                  <TextField layoutX="204.0" layoutY="152.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e; -fx-text-fill: #9f2b68;" fx:id="xCourier" />
-                  <TextField fx:id="yCourier" layoutX="268.0" layoutY="150.0" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: #1e1e1e;-fx-text-fill: #9f2b68;" />
->>>>>>> dbb21164d189f91e2065fab61147cdcf5b0d8b9d
+
                   <Label layoutX="250.0" layoutY="150.0" style="-fx-background-color: #242424;" text="y" textFill="#9f2b68">
                      <font>
                         <Font name="System Bold" size="16.0" />

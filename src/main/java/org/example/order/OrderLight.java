@@ -74,17 +74,14 @@ public class OrderLight extends Order {
 
     @Override
     public String toString() {
-        return "OrderHard{" +
+        return
                 "id=" + id +
+                ", Type=Light" +
                 ", pointStart=" + pointStart +
                 ", pointFinish=" + pointFinish +
                 ", time=" + time +
                 ", weight=" + weight +
                 '}';
-    }
-
-    public String OrderToString(){
-        return id + "_" + weight + "_" + pointStart + "_" + pointFinish + "_" + time;
     }
 
 }

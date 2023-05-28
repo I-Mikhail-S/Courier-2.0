@@ -89,7 +89,7 @@ public class Order {
 //
     @Override
     public String toString() {
-        return "Order{" +
+        return
                 "id=" + id +
                 ", pointStart=" + pointStart +
                 ", pointFinish=" + pointFinish +
@@ -98,8 +98,5 @@ public class Order {
                 '}';
     }
 
-    public String OrderToString(){
-        return id + "_" + weight + "_" + pointStart + "_" + pointFinish + "_" + time;
-    }
 }
 
