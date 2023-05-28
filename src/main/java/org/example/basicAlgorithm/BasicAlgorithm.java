@@ -41,7 +41,7 @@ public class BasicAlgorithm {
             throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
         List<Schedule> ideaScheduleList = new ArrayList<>();
-        while (ideaScheduleList.size() < 10) { // при глубине просчёта 100000 считает в районе 1 минуты.
+        while (ideaScheduleList.size() < 100000) { // при глубине просчёта 100000 считает в районе 1 минуты.
             random(orderList.size());
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
