@@ -7,12 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Courier" />
-<<<<<<< HEAD
-        <module name="demo" />
-=======
-        <module name="Courier-2.0" />
->>>>>>> 9d5e560baebae9acca67c2f0da7df2534ce0d205
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Courier-2.0" target="11" />
+    </bytecodeTargetLevel>
   </component>
 </project>

@@ -1,41 +1,3 @@
-<<<<<<< HEAD
-package org.example.Schedule;
-
-import org.example.Purpose.Purpose;
-
-import java.util.LinkedList;
-
-public class Schedule {
-
-
-    LinkedList<Purpose> Schedule;
-
-    public Schedule(){}
-
-   // добавить элемент в ячейку index
-    public void setPurposeWithIndex(Purpose purpose, int index) {
-        Schedule.set(index,purpose);
-    }
-    // добавить в конец
-    public void setPurpose(Purpose purpose){
-        Schedule.add(purpose);
-    }
-    // вернуть элемент ячейки index
-    public Purpose getPurpose(int index){
-
-        return Schedule.get(index);
-    }
-
-    // удалить ячейку index
-    public void removePurpose(int index){
-        Schedule.remove(index);
-    }
-
-    public String toString() {
-        return "Расписание:" + "\n" + Schedule;
-    }
-}
-=======
 package org.example.schedule;
 import org.example.abstractPerson.Person;
 import org.example.pupose.Purpose;
@@ -94,6 +56,7 @@ public class Schedule {
         }
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -107,4 +70,3 @@ public class Schedule {
         return Objects.hash(allPurpose);
     }
 }
->>>>>>> 9d5e560baebae9acca67c2f0da7df2534ce0d205

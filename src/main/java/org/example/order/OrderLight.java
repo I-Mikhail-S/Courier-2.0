@@ -82,4 +82,9 @@ public class OrderLight extends Order {
                 ", weight=" + weight +
                 '}';
     }
+
+    public String OrderToString(){
+        return id + "_" + weight + "_" + pointStart + "_" + pointFinish + "_" + time;
+    }
+
 }

@@ -59,6 +59,7 @@ public class Point {
         }
         return 0;
     }
+
     @Override
     public String toString() {
         return "Point{" +
@@ -66,4 +67,5 @@ public class Point {
                 ", Y=" + Y +
                 '}';
     }
+
 }

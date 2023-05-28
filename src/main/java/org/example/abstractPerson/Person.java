@@ -117,6 +117,10 @@ public  class Person {
                 ", schedule=" + schedule +
                 '}';
     }
+
+    public String PersonToString(){
+        return id + "_" + name + "_" + speed + "_" + energy + "_" + location;
+    }
 }
 
 
