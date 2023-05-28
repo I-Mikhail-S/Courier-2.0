@@ -37,12 +37,14 @@ public  class Person {
 
     public Person() {}
 
-    public Person(int id, String name, double speed, double energy, Point location) {
+    public Person(int id, String name, double speed, double energy,String timeStartCourier,String timeEndCourier, Point location) {
         this.id = id;
         this.name = name;
         this.speed = speed;
         this.energy = energy;
         this.location = location;
+        this.timeStartCourier = timeStartCourier;
+        this.timeEndCourier = timeEndCourier;
         this.schedule = new Schedule();
     }
 
@@ -120,7 +122,6 @@ public  class Person {
                 ", energy=" + energy +
                 ", location=" + location +
                 ", setIsFree=" + setIsFree +
-                ", schedule=" + schedule +
                 '}';
     }
 }

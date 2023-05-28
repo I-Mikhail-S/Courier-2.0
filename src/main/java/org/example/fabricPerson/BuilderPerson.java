@@ -75,20 +75,20 @@ public class BuilderPerson {
             }
             return person;
         }
-        Person getNewCourier(int id, String name, double speed, double energy, Point location, EnumCourier enumCourier) throws Exception {
+        Person getNewCourier(int id, String name, double speed, double energy, Point location,String timeStartInterval,String timeEndCourier, EnumCourier enumCourier) throws Exception {
             Person person = null;
             ICheckCourier checkCourier = new CheckCourier();
             switch (enumCourier) {
                 case CAR:
-                    person = new CourierCar(id,name,speed,energy,location);
+                    person = new CourierCar(id,name,speed,energy,timeStartInterval,timeEndCourier,location);
                     if(checkCourier.checkCarCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 case BIKE:
-                    person = new CourierBike(id,name,speed,energy,location);
+                    person = new CourierBike(id,name,speed,energy,timeStartInterval,timeEndCourier,location);
                     if(checkCourier.checkBikeCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 case PEOPLE:
-                    person = new CourierPeople(id,name,speed,energy,location);
+                    person = new CourierPeople(id,name,speed,energy,timeStartInterval,timeEndCourier,location);
                     if(checkCourier.checkPeopleCourier(person)) throw new Exception("Не коректные данные");
                     break;
                 default:

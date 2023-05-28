@@ -13,8 +13,8 @@ public class CourierPeople extends Person {
     private boolean free;
     private Point location;
 
-    public CourierPeople(int id,String name,double speed,double energy, Point location) {
-        super(id,name,speed,energy,location);
+    public CourierPeople(int id,String name,double speed,double energy,String timeStartInterval,String timeEndCourier,Point location) {
+        super(id,name,speed,energy,timeStartInterval,timeEndCourier,location);
     }
 
     public CourierPeople() {

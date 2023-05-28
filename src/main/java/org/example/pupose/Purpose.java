@@ -39,13 +39,10 @@ public class Purpose {
         this.routeLength = DistanceCalculate.getDistance(courier, order);
         this.timeExecution = TimeCalculate.getTime(courier, order);
         this.income = Money.moneySum(courier, order);
-
         this.timeExecutionTime = new Time(order.getTime().getStartTimeInterval(),
-                Utils.timeExecution((int) timeExecution, order.getTime().getStartTimeInterval()));
-
+                Utils.timeExecution((int) timeExecution, courier.getTimeStartCourier()));
         Utils.swapLocation(courier, order);
     }
-
     public boolean isDone() {
         return isDone;
     }
@@ -115,10 +112,8 @@ public class Purpose {
         return "Purpose{" +
                 "courier=" + courier +
                 ", order=" + order +
-                ", startPoint=" + startPoint +
-                ", endPoint=" + endPoint +
-                ", timeExecutionTime=" + timeExecutionTime +
-                ", timeExecution=" + timeExecution +
+                ", timeExecutionTime=" + timeExecutionTime.getEndTimeInterval() +
+                ", timeExecutionTime=" + timeExecution +
                 ", routeLength=" + Math.round(routeLength) +
                 ", income=" + Math.round(income) +
                 " рубль(ей)}";
