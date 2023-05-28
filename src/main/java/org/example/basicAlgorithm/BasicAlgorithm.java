@@ -23,11 +23,11 @@ public class BasicAlgorithm {
         return list;
     }
 
-    private static Integer numberRandom () {
+    private static Integer numberRandomO () {
         if (list.isEmpty()) {
             throw new RuntimeException("Рандомные числа не сгенерированы!");
         }
-        int value = list.get(0);;
+        int value = list.get(0);
         list.remove(0);
         return value;
     }
@@ -37,19 +37,16 @@ public class BasicAlgorithm {
         if (personList == null && orderList == null) {
             throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
-
         List<Schedule> ideaScheduleList = new ArrayList<>();
         while (ideaScheduleList.size() < 100000) { // при глубине просчёта 100000 считает в районе 1 минуты.
-            random(orderList.size());
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
-            for (int k = 0,i = 0; list.size() > 0 ; k++,i++) {
+            for (int k = 0; list.size() > 0 ; k++) {
                 if (k == personList.size()) k = 0;
-                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(numberRandom()));
+                Purpose ideaPurpose = new Purpose(personList.get(k), unUsedOrder.get(numberRandomO()));
                 updatePurpose(ideaPurpose);
                 ideaSchedule.addPurpose(ideaPurpose);
                 personList.get(k).getSchedule().addPurpose(ideaPurpose);
-                //unUsedOrder.remove(ideaPurpose.getOrder());
             }
             boolean flag = true;
             for (Schedule helpSchedule : ideaScheduleList)

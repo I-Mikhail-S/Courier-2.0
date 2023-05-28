@@ -32,11 +32,12 @@ class FirstPurposeTest {
 
         List<Person> persons = new ArrayList();
         persons.add(new Person(1, "Stepan", 1.0, 2.0, new Point(2.0, 2.0)));
-        persons.add(new Person(2, "Ivan", 2.0, 3.0, new Point(3.0, 3.0)));
+        persons.add(new Person(2, "Vadim", 2.0, 3.0, new Point(3.0, 3.0)));
         persons.add(new Person(3, "Misha", 3.0, 4.0, new Point(4.0, 4.0)));
 
         Schedule schedule = BasicAlgorithm.basicAlgorithm(persons, orders);
         schedule.beautifulString();
 
+        System.out.println(persons.get(0).getSchedule());
     }
 }
