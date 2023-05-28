@@ -1,5 +1,8 @@
 package org.example.abstractPerson;
 
+import org.example.abstractOrder.Order;
+import org.example.checkOrder.CheckOrder;
+import org.example.checkOrder.ICheckOrder;
 import org.example.point.Point;
 import org.example.schedule.Schedule;
 
@@ -115,7 +118,9 @@ public  class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+
+        return
+                "CourierBlank{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", speed=" + speed +
@@ -125,9 +130,7 @@ public  class Person {
 
     }
 
-    public String PersonToString(){
-        return id + "_" + name + "_" + speed + "_" + energy + "_" + location;
-    }
+
 }
 
 

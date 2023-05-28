@@ -72,8 +72,9 @@ public class CourierCar extends Person {
 
     @Override
     public String toString() {
-        return "CourierCar{" +
+        return
                 "id=" + id +
+                ", Type=By car" +
                 ", name='" + name + '\'' +
                 ", speed=" + speed +
                 ", energy=" + energy +

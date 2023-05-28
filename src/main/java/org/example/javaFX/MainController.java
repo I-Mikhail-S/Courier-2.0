@@ -67,7 +67,7 @@ public class MainController {
         Time time = new Time(time1,time2);
         double weight = Double.parseDouble(weightOrder.getText());
 
-        switch (CourierType.getText()) {
+        switch (OrderType.getText()) {
             case "Light":
                 Order orderLight = new OrderLight(id, start, end, time, weight);
                 orders.add(orderLight);
@@ -105,7 +105,7 @@ public class MainController {
         String time2 = courierTimeEnd.getText();
 
         switch (CourierType.getText()){
-            case "On foot":
+            case "By foot":
                 Person courierPeople = new CourierPeople(id, name, speed, energy,time1,time2, point);
                 persons.add(courierPeople);
                 CourierList.getItems().add(courierPeople.toString());
@@ -138,8 +138,8 @@ public class MainController {
         double outcome = Math.round(schedule.getIncomeSchedule());
         double distance = Math.round(schedule.getTotalLength());
 
-        outcomeField.setText(Double.toString(outcome) + " rub");
-        distanceField.setText(Double.toString(distance) + " m");
+        outcomeField.setText(Double.toString(outcome));
+        distanceField.setText(Double.toString(distance));
 
 
     }
@@ -167,7 +167,7 @@ public class MainController {
     }
 
     public void PeopleCourier(ActionEvent event) {
-        CourierType.setText("On foot");
+        CourierType.setText("By foot");
     }
 
     public void ClearCourierList(ActionEvent event) {

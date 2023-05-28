@@ -1,4 +1,6 @@
 package org.example.abstractOrder;
+import org.example.checkOrder.CheckOrder;
+import org.example.checkOrder.ICheckOrder;
 import org.example.point.Point;
 import org.example.time.Time;
 
@@ -89,8 +91,11 @@ public class Order {
 //
     @Override
     public String toString() {
+
+
         return
                 "id=" + id +
+                ", Type=Blank" +
                 ", pointStart=" + pointStart +
                 ", pointFinish=" + pointFinish +
                 ", time=" + time +
