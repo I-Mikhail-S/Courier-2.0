@@ -120,8 +120,8 @@ public  class Person {
     public String toString() {
 
         return
-                "CourierBlank{" +
                 "id=" + id +
+                ", Type=Blank" +
                 ", name='" + name + '\'' +
                 ", speed=" + speed +
                 ", energy=" + energy +

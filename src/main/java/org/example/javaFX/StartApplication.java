@@ -27,7 +27,7 @@ public class StartApplication extends Application {
         stage.setTitle("Courier");
 
         stage.setScene(start);
-        
+
         stage.show();
 
     }
