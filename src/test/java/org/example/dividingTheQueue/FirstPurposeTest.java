@@ -31,9 +31,9 @@ class FirstPurposeTest {
         orders.add(new Order(10, new Point(10.0, 6.0), new Point(99.0, 7.0), new Time("08:00", "12:00"), 10.0));
 
         List<Person> persons = new ArrayList();
-        persons.add(new Person(1, "Stepan", 1.0, 2.0, new Point(2.0, 2.0)));
-        persons.add(new Person(2, "Vadim", 2.0, 3.0, new Point(3.0, 3.0)));
-        persons.add(new Person(3, "Misha", 3.0, 4.0, new Point(4.0, 4.0)));
+        persons.add(new Person(1, "Stepan", 1.0, 2.0,"08:00","12:00",new Point(2.0, 2.0)));
+        persons.add(new Person(2, "Ivan", 2.0, 3.0,"08:00", "12:00",new Point(3.0, 3.0)));
+        persons.add(new Person(3, "Misha", 3.0, 4.0,"08:00", "12:00",new Point(4.0, 4.0)));
 
         Schedule schedule = BasicAlgorithm.basicAlgorithm(persons, orders);
         schedule.beautifulString();

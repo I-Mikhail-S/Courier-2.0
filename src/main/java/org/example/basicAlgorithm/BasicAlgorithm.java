@@ -12,9 +12,14 @@ import java.util.*;
 
 public class BasicAlgorithm {
     private static void updatePurpose(Purpose purpose){
-        purpose.getCourier().setTimeEndCourier(purpose.getTimeExecutionTime().getEndTimeInterval());
-        purpose.getOrder().getTime().setStartTimeInterval(purpose.getCourier().getTimeEndCourier());
-        purpose.getOrder().getTime().setEndTimeInterval(purpose.getCourier().getTimeEndCourier());
+        purpose.getCourier().setTimeStartCourier(Utils.timeExecution((int) purpose.getTimeExecution(),purpose.getCourier().getTimeStartCourier()));
+        purpose.getOrder().getTime().setEndTimeInterval( purpose.getCourier().getTimeStartCourier());
+    }
+    private static void cleanPurpose(Schedule ideaSchedule){
+        for (int i = 0; i < ideaSchedule.getAllPurpose().size(); i++) {
+            ideaSchedule.getAllPurpose().get(i).getCourier().setTimeStartCourier(ideaSchedule.getAllPurpose().get(i).getOrder().getTime().getStartTimeInterval());
+            ideaSchedule.getAllPurpose().get(i).getOrder().getTime().setEndTimeInterval( ideaSchedule.getAllPurpose().get(i).getCourier().getTimeEndCourier());
+        }
     }
     private static ArrayList<Integer> list = new ArrayList<>();
     public static ArrayList<Integer> random(int size){
@@ -38,7 +43,8 @@ public class BasicAlgorithm {
             throw new RuntimeException("Передан(ы) пустой(ые) лист(ы)!");
         }
         List<Schedule> ideaScheduleList = new ArrayList<>();
-        while (ideaScheduleList.size() < 100000) { // при глубине просчёта 100000 считает в районе 1 минуты.
+        while (ideaScheduleList.size() < 100) { // при глубине просчёта 100000 считает в районе 1 минуты.
+
             List<Order> unUsedOrder = new ArrayList<>(orderList);
             Schedule ideaSchedule = new Schedule();
             for (int k = 0; list.size() > 0 ; k++) {
@@ -55,6 +61,7 @@ public class BasicAlgorithm {
                     break;
                 }
             if (flag) ideaScheduleList.add(ideaSchedule);
+            cleanPurpose(ideaSchedule);
         }
         int minIndex = 0;
         Schedule minLengthSchedule = ideaScheduleList.get(0);
