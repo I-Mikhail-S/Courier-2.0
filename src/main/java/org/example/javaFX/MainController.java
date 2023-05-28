@@ -70,7 +70,7 @@ public class MainController {
 
     public void AddCourier(ActionEvent event) {
 
-        int id = 1 + CourierList.getItems().size();
+     /*   int id = 1 + CourierList.getItems().size();
         String name = nameCourier.getText();
         double speed = Double.parseDouble(speedCourier.getText());
         double x = Double.parseDouble(xCourier.getText());
@@ -78,21 +78,16 @@ public class MainController {
         double energy = Double.parseDouble(energyCourier.getText());
         Point point = new Point(x,y);
 
-        Person courier = new Person(id, name, speed, energy, point);
+      *//*  Person courier = new Person(id, name, speed, energy, point);*//*
 
         persons.add(courier);
-        CourierList.getItems().add(courier.PersonToString());
+        CourierList.getItems().add(courier.PersonToString());*/
 
     }
 
     public void StartApplication(ActionEvent event) {
 
-        ResultList.getItems().clear();
-
-        Schedule schedule = FirstSchedule.firstSchedule(orders, persons);
-        for (Purpose helpPurpose : schedule.getAllPurpose()) {
-            ResultList.getItems().add(helpPurpose);
-        }
+      
     }
 
     public void StressModeToggle(ActionEvent event) {
