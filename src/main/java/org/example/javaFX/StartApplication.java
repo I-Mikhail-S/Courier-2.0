@@ -3,9 +3,14 @@ package org.example.javaFX;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.io.InputStream;
+
 import org.example.javaFX.MainController;
+
+
 public class StartApplication extends Application {
 
     @Override
@@ -15,10 +20,14 @@ public class StartApplication extends Application {
 
         Scene start = new Scene(start_loader.load());
 
+        Image icon = new Image(getClass().getResource("/human.png").toExternalForm());
 
+        stage.getIcons().add(icon);
 
-        stage.setTitle("Title");
+        stage.setTitle("Courier");
+
         stage.setScene(start);
+        
         stage.show();
 
     }
@@ -27,20 +36,6 @@ public class StartApplication extends Application {
         launch();
     }
 
-    /*
-
-    * order list - иконку, где будут отображаться все заказы... (так же с courier list)
-
-    * у курьеров должны быть айди
-
-    * со временем только три фиксировааных отрезка времени
-
-    * /---
-    * веб сервис
-    * /---
-
-
-    */
 }
 
 
