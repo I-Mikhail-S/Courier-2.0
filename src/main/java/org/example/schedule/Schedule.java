@@ -57,6 +57,10 @@ public class Schedule {
         for (Purpose helpPurpose : allPurpose) {
             System.out.println(helpPurpose);
         }
+        System.out.println("Общий доход со всех заказов: " + Math.round(getIncomeSchedule())
+                + " рубля(ей).");
+        System.out.println("Общая пройденная дистанция: " + Math.round(getTotalLength())
+                + " метра(ов).");
     }
 
     @Override

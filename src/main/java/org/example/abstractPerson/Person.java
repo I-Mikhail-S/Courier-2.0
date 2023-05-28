@@ -121,7 +121,10 @@ public  class Person {
                 ", speed=" + speed +
                 ", energy=" + energy +
                 ", location=" + location +
+<<<<<<< HEAD
                 ", setIsFree=" + setIsFree +
+=======
+>>>>>>> aee0eecb4669576f3b54afd534281bc1a0b67340
                 '}';
     }
 }
