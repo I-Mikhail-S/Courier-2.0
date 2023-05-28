@@ -86,7 +86,7 @@ public class Order {
     public void setTime(Time time) {
         this.time = time;
     }
-
+//
     @Override
     public String toString() {
         return "Order{" +
@@ -98,5 +98,8 @@ public class Order {
                 '}';
     }
 
+    public String OrderToString(){
+        return id + "_" + weight + "_" + pointStart + "_" + pointFinish + "_" + time;
+    }
 }
 

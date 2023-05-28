@@ -123,6 +123,10 @@ public  class Person {
                 ", location=" + location +
                 '}';
     }
+
+    public String PersonToString(){
+        return id + "_" + name + "_" + speed + "_" + energy + "_" + location;
+    }
 }
 
 
