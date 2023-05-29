@@ -7,6 +7,7 @@ import org.example.time.Time;
  * Средний заказ,ограничения по {@link OrderMedium#weight} не > 5, наследник {@link Order}
  */
 public class OrderMedium extends Order {
+
     private int id;
     private Point pointStart;
     private Point pointFinish;
@@ -74,6 +75,7 @@ public class OrderMedium extends Order {
 
     @Override
     public String toString() {
+
         return "id=" + id +
                 ", Type=Medium" +
                 ", pointStart=" + pointStart +
@@ -81,9 +83,5 @@ public class OrderMedium extends Order {
                 ", time=" + time +
                 ", weight=" + weight +
                 '}';
-    }
-
-    public String OrderToString(){
-        return id + "_" + weight + "_" + pointStart + "_" + pointFinish + "_" + time;
     }
 }

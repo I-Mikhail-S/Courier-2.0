@@ -50,7 +50,6 @@ public class MainController {
     public TextField speedCourier;
     public TextField nameCourier;
 
-
     public void AddOrder(ActionEvent event) {
 
         int id = 1 + OrderList.getItems().size();

@@ -89,10 +89,9 @@ public class Order {
         this.time = time;
     }
 //
+
     @Override
     public String toString() {
-
-
         return
                 "id=" + id +
                 ", Type=Blank" +
@@ -102,6 +101,8 @@ public class Order {
                 ", weight=" + weight +
                 '}';
     }
+
+
 
 }
 
