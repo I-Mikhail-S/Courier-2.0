@@ -18,7 +18,7 @@ public class Money {
         double secondDistance = Point.distanceFourPoint(order.getPointStart().getX(), order.getPointStart().getY(),
                 order.getPointFinish().getX(), order.getPointFinish().getY());
 
-        // расстояние * вес * "денежный коэфициент (с потолка)".
+        // расстояние * вес * "денежный коэфициент (с потолка)" + 200 за выполнение заказа.
         sum = (firstDistance * 1.1) + ((secondDistance * 1.5) * (order.getWeight() * 0.75)) + 200;
 
         return sum;
